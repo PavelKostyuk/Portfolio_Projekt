@@ -152,12 +152,9 @@
       <div class="row">
         <div class="col-sm-8 col-md-7 py-4">
           <h4>Om mig</h4>
-          <p class="text-body-secondary">Hej, jag heter Pavel Kostyuk och jag är en DevOps student på Nackademin YH. DevOps är ett område som jag brinner 
-            för och som jag vill utveckla mig inom. Jag tycker om att lära mig nya tekniker och verktyg som kan hjälpa mig att skapa effektiva och säkra 
-            lösningar för olika typer av system. Utöver mina studier engagerar jag mig i olika projekt som är relaterade till DevOps yrkesrollen. Jag har
-             bland annat skapat en webbplats med Python och Django som fungerar som min portfolio för de projekt jag genomför. På den här webbplatsen kan 
-             du se några exempel på vad jag har gjort och vad jag kan göra. Jag hoppas att du tycker att det är intressant och inspirerande. 
-             Om du har några frågor eller feedback, tveka inte att kontakta mig.</p>
+          <p class="text-body-secondary">Hej,
+            Mitt namn är Pavel Kostyuk och jag studerar till DevOps ingenjör vid 
+            Nackademin YH i Solna. Med hjälp av den sidan visar jag ut mina DevOps projekt som jag arbetar med utanför skolan.</p>
         </div>
         <div class="col-sm-4 offset-md-1 py-4">
           <h4>Kontakt</h4>
@@ -186,40 +183,20 @@
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <img class="rounded-circle mb-1" src="{% static 'CV.png' %}" alt="" style="width: 125px; height: '125px';"
+        <img class="mb-3" src="{{ project.image.url}}" alt="" style="width: 400px; height: '400px';"
         <p
         ></p>
-        <h1 class="fw-light"><strong>Pavel Kostyuk</strong></h1>
-        <h5>DevOps Engineer Student</5>
+        <h1 class="fw-light"><strong>{{ project.title }}</strong></h1>
         <p 
         ></p>
-        <p class="lead text-body-secondary">Välkommen till min portfolio webbplats! 
-          Här kan du se några av de projekt jag har arbetat med som en DevOps student på Nackademin YH. 
-          Jag försöker använda mig av olika tekniker och verktyg för att skapa projekt och försöker relatera de till min yrkesroll. 
-          Du kan klicka på varje projekt för att se mer information om vad jag har gjort och vad jag har lärt mig. 
-          Jag hoppas att du tycker att det är intressant och inspirerande. Om du vill veta mer om mig eller mina projekt, tveka inte att kontakta mig.
-          </p>
+        <p class="lead text-body-secondary">{{ project.description }}</p>
             </p>
         <p>
-          <a href="https://www.linkedin.com/in/pavel-kostyuk-710a521b8" class="btn btn-primary my-2">Connect</a>
+          <a href="{% url 'home' %}" class="btn btn-primary my-2">Back</a>
         </p>
       </div>
     </div>
   </section>
-  <div class="album py-5 bg-body-tertiary">
-    <div class="container">
-
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        {%for project in projects.all %}
-        <div class="col">
-          <a href="{% url 'detail' project.id %}" class="card shadow-sm">
-           <img src="{{ project.image.url }}" alt=""> 
-            <div class="card-body">
-              <p class="card-text">{{ project.title }}.</p>
-            </div>
-        </a>
-        </div>
-        {% endfor %}
 
 </main>
 
