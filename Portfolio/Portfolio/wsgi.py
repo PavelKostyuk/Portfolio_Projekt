@@ -1,16 +1,10 @@
-"""
-WSGI config for Portfolio project.
-
-It exposes the WSGI callable as a module-level variable named ``application``.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/4.2/howto/deployment/wsgi/
-"""
-
-import os
-
+import os 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Portfolio.settings')
+# Check for the PRODUCTION environment variable to see if we are running in Azure App Service
+# If so, then load the settings from production.py
+settings_module = 'portfolio.production' if 'PRODUCTION' in os.environ else 'portfolio.settings'
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)
+
 
 application = get_wsgi_application()
