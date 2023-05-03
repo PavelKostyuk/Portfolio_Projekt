@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/49143130-dadb-4dbe-9fff-b17d655e3d78/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/pavel-kostyuk-portfolio",
+    "appService.deploySubpath": "."
+}
