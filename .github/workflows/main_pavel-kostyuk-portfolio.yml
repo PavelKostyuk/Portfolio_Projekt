@@ -28,8 +28,8 @@ jobs:
           source venv/bin/activate
       
       - name: Install dependencies
-        working-directory: ./pavel-kostyuk-portfolio
-        run: pip install -r requirements.txt
+        working-directory: /home/runner/work/Portfolio_Project/Portfolio_Project/
+        run: run: pip install -r Portfolio/requirements.txt
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
       
