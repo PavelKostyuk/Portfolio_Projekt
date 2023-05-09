@@ -3,8 +3,8 @@ from .models import Project
 
 # Create your views here.
 def home(request):
-    projects = Project.objects
-    return render(request, 'projects/home.html', {'projects':projects})
+    projects = Project.objects.all()
+    return render(request, 'projects/home.html', {'projects': projects})
 
 def detail(request, project_id):
     project_detail = get_object_or_404(Project, pk=project_id)
