@@ -7,7 +7,7 @@
 	COPY . /app
 	# Install any needed packages specified in requirements.txt
 	RUN pip install --upgrade pip
-	RUN pip install --trusted-host pypi.python.org -r requirements.txt
+	RUN pip install -r requirements.txt
 	# Make port 8000 available to the world outside this container
 	EXPOSE 8000
 	# Set the environment variable
