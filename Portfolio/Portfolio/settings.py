@@ -122,7 +122,7 @@ SERVER_EMAIL = 'webmaster@example.com'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-try
+try:
     from .local_settings import *
 except ImportError:
     pass
