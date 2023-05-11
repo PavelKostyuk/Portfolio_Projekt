@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   {% load static %}
-  <head><script src="/docs/5.3/assets/js/color-modes.js"></script>
+  <head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -89,6 +89,14 @@
       .bd-mode-toggle {
         z-index: 1500;
       }
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      main {
+        flex: 1;
+      }
     </style>
 
 <header data-bs-theme="dark">
@@ -125,12 +133,14 @@
   </div>
 </header>
 
+<body class="wrapper">
 <main>
 
+  <main>
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <img class="mb-3" src="{{ project.project_image.url}}" alt="" style="width: 400px; height: '400px';"
+        <img src="{{ project.project_image.url}}" alt="" class="card-img-top" style="height: 230px; width: 400px; object-fit: cover;"
         <p
         ></p>
         <h1 class="fw-light"><strong>{{ project.title }}</strong></h1>
@@ -146,9 +156,20 @@
   </section>
 
 </main>
+</main>
 
+<footer class="text-body-secondary py-5">
+  <div class="container">
+    <div class="text-center">
+    <p class="mb-1">© 2023 Pavel Kostyuk</p>
+    <p class="float-end mb-1">
+    </p>
+      <img src="https://www.djangoproject.com/m/img/badges/djangopowered126x54.gif" border="0" alt="" style="height: 40px; width: 90px; margin-top:30px; margin:0 auto;"/>
+    </a> </p>
+  </div>
+</footer>
 
 
 <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-  </body>
+
 </html>

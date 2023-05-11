@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   {% load static %}
-  <head><script src="/docs/5.3/assets/js/color-modes.js"></script>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -68,7 +68,7 @@
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
         <img class="rounded-circle mb-1" src="{% static 'CV.png' %}" alt="" style="width: 200px; height: '200px';"
-        <p
+        
         ></p>
         <h1 class="fw-light"><strong>Pavel Kostyuk</strong></h1>
         <h5>DevOps Engineer Student</5>
@@ -87,27 +87,41 @@
         </p>
       </div>
     
-  <div class="album py-5 bg-light">
-    <div class="container">
-      <h2 class="text-center">Projekt</h2>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        {% for project in projects.all %}
-        <div class="col">
-        <div class="card shadow-sm">
-          <a href="{% url 'detail' project.id %}" class="card shadow-sm">
-            <img src="{{ project.project_image.url }}" alt="">
-            <div class="card-body">
-              <p class="card-text">{{ project.title }}</p>
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <h2 class="text-center">Projekt</h2>
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {% for project in projects.all %}
+            <div class="col">
+            <div class="card shadow-sm"></div>
+              <a href="{% url 'detail' project.id %}" class="card shadow-sm">
+                <img src="{{ project.project_image.url }}" alt="" class="card-img-top" style="height: 200px; object-fit: cover;">
+                <div class="card-body">
+                  <p class="card-text" style="font-size: 1.125rem;
+                  color: #333;height: 55px; overflow: hidden;">{{ project.title }}</p>
+                </div>
+            </a>
             </div>
-        </a>
+            {% endfor %}
+          </div>
         </div>
-        {% endfor %}
       </div>
+
+    </main>
+
+
+  <footer class="text-body-secondary py-5">
+    <div class="container">
+      <div class="text-center">
+      <p class="mb-1">© 2023 Pavel Kostyuk</p>
+      <p class="float-end mb-1">
+      </p>
+        <img src="https://www.djangoproject.com/m/img/badges/djangopowered126x54.gif" border="0" alt="" style="height: 40px; width: 90px; margin-top:30px; margin:0 auto;"/>
+      </a> </p>
     </div>
-  </div>
-</main>
+  </footer>
 
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 
-<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-  </body>
+ </body>
 </html>
