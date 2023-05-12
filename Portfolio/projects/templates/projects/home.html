@@ -26,44 +26,36 @@
           font-size: 3.5rem;
         }
       }
+      .fixed-top {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+      }
+      .text-center {
+        text-align: center;
+      }
+
+      .text-center .btn-primary {
+        display: block;
+        margin: 0 auto;
+      }
+
     </style>
 
-<header data-bs-theme="dark">
-  <div class="collapse text-bg-dark" id="navbarHeader">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-8 col-md-7 py-4">
-          <h4>Om mig</h4>
-          <p class="text-body-secondary">Hej, jag heter Pavel Kostyuk och jag är en DevOps student på Nackademin YH. DevOps är ett område som jag brinner 
-            för och som jag vill utveckla mig inom. Jag tycker om att lära mig nya tekniker och verktyg. Utöver mina studier engagerar jag mig i olika projekt som kan hjälpa mig att utvecklas inom DevOps yrkesrollen. 
-            Jag har bland annat skapat den här webbplatsen med hjälp av Python och Django som fungerar som min portfolio för de projekt jag genomför. På den här webbplatsen kan 
-             du se några exempel på vad jag har gjort och vad jag kan göra. Jag hoppas att du tycker att det är intressant och inspirerande. 
-             Om du har några frågor eller feedback, tveka inte att kontakta mig.</p>
-        </div>
-        <div class="col-sm-4 offset-md-1 py-4">
-          <h4>Kontakt</h4>
-          <ul class="list-unstyled">
-            <li><a href="https://www.linkedin.com/in/pavel-kostyuk-710a521b8" class="text-black">Connect on Linkedin</a></li> 
-            <li><a href="mailto:pavel.kostyuk@yh.nackademin.se" class="text-black">Email me</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="navbar navbar-dark bg-dark shadow-sm">
+  <div class="navbar navbar-dark bg-dark shadow-sm fixed-top">
     <div class="container">
       <a href="#" class="navbar-brand d-flex align-items-center">
         <strong>Portfolio</strong>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
       </button>
     </div>
   </div>
 </header>
 <main>
 
-
+  ></p>
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
@@ -82,8 +74,8 @@
           </p>
             </p>
         <p>
-          <a href="https://www.linkedin.com/in/pavel-kostyuk-710a521b8" class="btn btn-primary my-2">Connect on Linkedin</a>
-          <a href="mailto:pavel.kostyuk@yh.nackademin.se" class="btn btn-primary my-2">Email me</a>
+          <a href="https://www.linkedin.com/in/pavel-kostyuk-710a521b8" class="btn btn-primary my-2 d-block custom-size custom-width" style=" text-align: center ;width: 200px ;padding: 8px 8px; font-size: 17px">Connect on Linkedin</a>
+          <a href="mailto:pavel.kostyuk@yh.nackademin.se" class="btn btn-primary my-2 d-block custom-size custom-width" style=" text-align: center ;width: 100px ;padding: 8px 8px; font-size: 17px">Email me</a>
         </p>
       </div>
     

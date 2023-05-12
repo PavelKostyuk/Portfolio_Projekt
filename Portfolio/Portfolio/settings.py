@@ -28,9 +28,15 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles', #to put images into description field on admin panel
     'projects',
+    'ckeditor',
+    'ckeditor_uploader',
+
+    
 ]
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -113,7 +119,6 @@ STATIC_URL = '/static/'
 #Media folder settings 
 MEDIA_ROOT = os.path.join(BASE_DIR)
 MEDIA_URL = '/media/'
-
 
 
 DEFAULT_FROM_EMAIL = 'webmaster@example.com'
