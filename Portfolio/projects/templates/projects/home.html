@@ -80,19 +80,19 @@
       </div>
     
       <div class="album py-5 bg-light">
-        <div class="container">
-          <h2 class="text-center">Projekt</h2>
+        <div class="container text-center">
+          <h2>Projekt</h2>
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             {% for project in projects.all %}
             <div class="col">
-            <div class="card shadow-sm"></div>
-              <a href="{% url 'detail' project.id %}" class="card shadow-sm">
-                <img src="{{ project.project_image.url }}" alt="" class="card-img-top" style="height: 200px; object-fit: cover;">
-                <div class="card-body">
-                  <p class="card-text" style="font-size: 1.125rem;
-                  color: #333;height: 55px; overflow: hidden;">{{ project.title }}</p>
-                </div>
-            </a>
+              <div class="card shadow-sm">
+                <a href="{% url 'detail' project.id %}">
+                  <img src="{{ project.project_image.url }}" alt="" class="card-img-top" style="height: 200px; object-fit: cover;">
+                  <div class="card-body">
+                    <p class="card-text" style="font-size: 1.125rem; color: #333; height: 55px; overflow: hidden;">{{ project.title }}</p>
+                  </div>
+                </a>
+              </div>
             </div>
             {% endfor %}
           </div>
