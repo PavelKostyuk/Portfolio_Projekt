@@ -84,11 +84,11 @@
           <h2>Projekt</h2>
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             {% for project in projects.all %}
-            <div class="col">
+            <div class="col col-12">
               <div class="card shadow-sm">
                 <a href="{% url 'detail' project.id %}">
                   <img src="{{ project.project_image.url }}" alt="" class="card-img-top img-fluid" style="height: 200px; width: 100%; object-fit: cover;">
-                  <div class="card-body">
+                  <div class="card-body" style="height: 80px;">
                     <p class="card-text" style="font-size: 1.125rem; color: #333; height: 55px; overflow: hidden;">{{ project.title }}</p>
                   </div>
                 </a>
