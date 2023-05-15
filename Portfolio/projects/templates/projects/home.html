@@ -79,7 +79,7 @@
         </p>
       </div>
     
-      <div class="album py-5 bg-light ">
+      <div class="album py-5 bg-light">
         <div class="container text-center">
           <h2>Projekt</h2>
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -87,7 +87,7 @@
             <div class="col">
               <div class="card shadow-sm">
                 <a href="{% url 'detail' project.id %}">
-                  <img src="{{ project.project_image.url }}" alt="" class="card-img-top img-fluid" style="object-fit: cover;">
+                  <img src="{{ project.project_image.url }}" alt="" class="card-img-top img-fluid" style="height: 200px; width: 100%; object-fit: cover;">
                   <div class="card-body">
                     <p class="card-text" style="font-size: 1.125rem; color: #333; height: 55px; overflow: hidden;">{{ project.title }}</p>
                   </div>
@@ -111,7 +111,6 @@
         <img src="https://www.djangoproject.com/m/img/badges/djangopowered126x54.gif" border="0" alt="" style="height: 40px; width: 90px; margin-top:30px; margin:0 auto;"/>
         <img src="{% static 'GitHub.png' %}" border="0" alt="" style="height: 90px; width: 90px; margin-top:30px; margin:0 auto;"/>
         <img src="{% static 'digitalocean.png' %}" border="0" alt="" style="height: 40px; width: 90px; margin-top:30px; margin:0 auto;"/>
-        <img src="{% static 'nackademin.jpg' %}" border="0" alt="" style="height: 320px; width: 720px; margin-top:240px; margin:0 auto;"/>
       
       </a> </p>
     </div>
