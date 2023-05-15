@@ -1,7 +1,7 @@
 from django.db import models
 from ckeditor_uploader.fields import RichTextUploadingField
 from ckeditor.fields import RichTextField
-from django import forms    
+from django import forms
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
 

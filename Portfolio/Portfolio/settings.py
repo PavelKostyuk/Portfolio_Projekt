@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+from django.urls import reverse_lazy
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,6 +38,25 @@ INSTALLED_APPS = [
 ]
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Full',
+        'height': 300,
+        'width': '100%',
+        'language': 'en',
+        'extraPlugins': ','.join([
+            'image',
+            'uploadimage'
+        ]),
+        'image_previewText': ' ',
+        'uploadUrl': reverse_lazy('ckeditor_upload'),
+        'filebrowserUploadUrl': reverse_lazy('ckeditor_upload'),
+        'removePlugins': 'stylesheetparser',
+        'allowedContent': True,
+    },
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -117,7 +137,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
 #Media folder settings 
-MEDIA_ROOT = os.path.join(BASE_DIR)
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 
