@@ -102,6 +102,45 @@
         z-index: 9999;
       }
 
+      .parent-container {
+      text-align: center;
+      }
+
+
+      .description-box {
+      width: 100%; /* adjust as needed */
+      margin: 0 auto;
+      text-align: left;
+      }
+
+      .btn-primary {
+        background-color: black;
+        color: white;
+        outline: none !important;
+      }
+
+     
+
+
+      .container-fluid {
+        padding: 0 !important;
+      }
+      .custom-width {
+        display: inline-block;
+        text-align: left;
+        max-width: 90%; /* set the desired width */
+        margin: 0 auto;
+      }
+
+      .navbar {
+        height: 56px; /* set the height of your navbar */
+      }
+
+      .mb-1 {
+        font-size: 14px;
+        line-height: 1.2;
+      }
+
 
       main {
         flex: 1;
@@ -126,19 +165,20 @@
   ></p> 
   <main>
   
-<section class="py-5 text-center container">
-  <div class="row py-lg-5">
-    <div class="col-lg-6 col-md-8 mx-auto">
-      <img src="{{ project.project_image.url }}" alt="" class="card-img-top img-fluid" style="object-fit: contain; max-height: 500px; max-width: 100%; height: auto;">
-      <p></p>
-      <h1 class="fw-light"><strong>{{ project.title }}</strong></h1>
-      <p></p>
-      <div class="description-box">
-        <p class="lead text-body-secondary">{{ project.description | safe }}</p>
+    <section class="py-5 text-center container-fluid" style="margin-top: 37px;">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <img src="{{ project.project_image.url }}" alt="" class="card-img-top img-fluid" style="object-fit: contain; max-height: 500px; max-width: 97%; height: auto;">
+          <p></p>
+          <h1 class="fw-light"><strong>{{ project.title }}</strong></h1>
+          <p></p>
+          <div class="custom-width">
+            <p class="lead text-body-secondary">{{ project.description | safe }}</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
+    
 
 </main>
 </main>
@@ -146,15 +186,14 @@
 <footer class="text-body-secondary py-5">
   <div class="container">
     <div class="text-center">
-    <p><a href="{% url 'home' %}" class="btn btn-primary my-2">Back</a></p>
-    <p class="mb-1">© This site was made possible thanks to Django, GitHub and DigitalOcean and their support to students!</p>
+    <p><a href="{% url 'home' %}" class="btn btn-primary my-5">Back</a></p>
+    <p class="mb-1">© This site was made possible thanks to Django, GitHub, DigitalOcean, NameCheap for provading great support to students!</p>
     <p class="float-end mb-1">
     </p>
-      <img src="https://www.djangoproject.com/m/img/badges/djangopowered126x54.gif" border="0" alt="" style="height: 40px; width: 90px; margin-top:30px; margin:0 auto;"/>
-      <img src="{% static 'GitHub.png' %}" border="0" alt="" style="height: 90px; width: 90px; margin-top:30px; margin:0 auto;"/>
-      <img src="{% static 'digitalocean.png' %}" border="0" alt="" style="height: 40px; width: 90px; margin-top:30px; margin:0 auto;"/>
-      <img src="https://www.positivessl.com/images/seals/positivessl_trust_seal_lg_222x54.png" border="0" alt="" style="height: 50px; width: 175px; margin-top:30px; margin:0 auto;"/>
-    
+    <img src="https://www.djangoproject.com/m/img/badges/djangopowered126x54.gif" border="0" alt="" style="height: 30px; width: 70px; margin-top:20px; margin:0 auto;"/>
+    <img src="{% static 'GitHub.png' %}" border="0" alt="" style="height: 45px; width: 48px; margin-top:15px; margin:0 auto;"/>
+    <img src="{% static 'digitalocean.png' %}" border="0" alt="" style="height: 35px; width: 60px; margin-top:15px; margin:0 auto;"/>
+    <img src="https://www.positivessl.com/images/seals/positivessl_trust_seal_lg_222x54.png" border="0" alt="" style="height: 35px; width: 140px; margin-top:15px; margin:0 auto;"/>
     </a> </p>
   </div>
 </footer>
