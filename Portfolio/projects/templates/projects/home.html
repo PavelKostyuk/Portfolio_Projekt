@@ -41,7 +41,7 @@
         margin: 0 auto;
       }
       .btn-primary {
-        background-color: black;
+        background-color: rgba(0, 0, 0, 0.858);
         color: white;
         outline: none !important;
       }
@@ -54,6 +54,7 @@
         font-size: 14px;
         line-height: 1.2;
       }
+
 
 
     </style>
@@ -88,32 +89,32 @@
           </p>
             </p>
         <p>
-          <a href="https://www.linkedin.com/in/pavel-kostyuk-710a521b8" class="btn btn-primary my-2 d-block custom-size custom-width" target="_blank" style=" text-align: center ;width: 200px ;padding: 8px 8px; font-size: 17px">Connect on Linkedin</a>
-          <a href="mailto:pavel.kostyuk@yh.nackademin.se" class="btn btn-primary my-2 d-block custom-size custom-width" target="_blank" style=" text-align: center ;width: 100px ;padding: 8px 8px; font-size: 17px">Email me</a>
+          <a href="https://www.linkedin.com/in/pavel-kostyuk-710a521b8" class="btn btn-primary my-2 d-block custom-size custom-width" target="_blank" style="text-align: center; width: 200px; padding: 8px 8px; font-size: 17px; border-radius: 15px;">Connect on Linkedin</a>
+          <a href="mailto:pavel.kostyuk@yh.nackademin.se" class="btn btn-primary my-2 d-block custom-size custom-width" target="_blank" style=" text-align: center ;width: 100px ;padding: 8px 8px; font-size: 17px; border-radius: 15px;">Email me</a>
         </p>
       </div>
     
      
 
-<div class="album py-5 bg-light">
-  <div class="container text-center">
-    <h2>Projekt</h2>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-      {% for project in projects.all %}
-      <div class="col">
-        <div class="card shadow-sm">
-          <a href="{% url 'detail' project.id %}">
-            <img src="{{ project.project_image.url }}" alt="" class="card-img-top img-fluid">
-            <div class="card-body">
-              <p class="card-text" style="font-size: 1.125rem; color: #333; height: 55px; overflow: hidden;">{{ project.title }}</p>
+      <div class="album py-5 bg-light container">
+        <div class="container text-center">
+          <h2>Projekt</h2>
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {% for project in projects.all %}
+            <div class="col">
+              <div class="card shadow-sm"style="border-radius: 15px;">
+                <a href="{% url 'detail' project.id %}">
+                  <img src="{{ project.project_image.url }}" alt="" class="card-img-top img-fluid" style="border-radius: 15px;">
+                  <div class="card-body">
+                    <p class="card-text" style="font-size: 1.125rem; color: #333; height: 55px; overflow: hidden;">{{ project.title }}</p>
+                  </div>
+                </a>
+              </div>
             </div>
-          </a>
+            {% endfor %}
+          </div>
         </div>
       </div>
-      {% endfor %}
-    </div>
-  </div>
-</div>
 
 
      
