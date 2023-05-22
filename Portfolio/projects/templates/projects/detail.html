@@ -110,8 +110,8 @@
       .description-box {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        justify-content: left;
+        align-items: left;
         text-align: justify;
         margin: 0 auto;
         width: 100%;
@@ -119,8 +119,8 @@
 
       .description-box p {
         display: flex;
-        justify-content: center;
-        align-items: center;
+        justify-content: left;
+        align-items: left;
         text-align: justify;
       }
 
@@ -195,16 +195,16 @@
       <div class="row py-lg-5">
         <div class="col-lg-7 col-md-8 mx-auto">
           <img src="{{ project.project_image.url }}" alt="" class="card-img-top img-fluid" style="object-fit: contain; max-height: 350px; max-width: 97%; height: auto;border-radius: 15px;">
-          <p style="text-align: justify;"></p>
+          <p style="text-align: left;"></p>
           <h1 class="fw-light"><strong>{{ project.title }}</strong></h1>
           <div class="mt-4 custom-width bg-gray">
             <div class="mt-2 d-flex justify-content-end">
               <div class="date-info">
                 <small class="text-muted"><p><strong>Skapad: </strong> '{{ project.created_at|date:"F j, Y" }}'</p></small>
                 <small class="text-muted"><p><strong>Uppdaterad: </strong>'{{ project.updated_at|date:"F j, Y" }}'</p></small>
-                <div class="description-box">
+                <div class="description-box"></div>
                 <div class="mt-4 text">
-                  <p class="lead text-body-secondary" style="text-align: justify;">{{ project.description | safe }}</p>
+                  <p class="lead text-body-secondary" style="text-align: left;">{{ project.description | safe }}</p>
                 </div>
               </div>
           </div>
