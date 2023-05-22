@@ -46,15 +46,33 @@
         outline: none !important;
       }
 
+      .btn-primary:hover {
+        box-shadow: 0 0 0 2px rgba(2, 87, 198, 0.817);
+        transform: scale(1.03);
+        transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+        z-index: 1;  
+      }
+      
       .card:hover {
-        outline: solid black 1px;
+        box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.5);
+        transform: scale(1.1);
+        transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+        z-index: 1;  
+      }
+
+      .card-img-top {
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .card:not(:hover) {
+        transform: scale(1);
+        transition: transform 0.3s ease-in-out;
       }
 
       .mb-1 {
         font-size: 14px;
         line-height: 1.2;
       }
-
 
 
     </style>
@@ -89,16 +107,17 @@
           </p>
             </p>
         <p>
-          <a href="https://www.linkedin.com/in/pavel-kostyuk-710a521b8" class="btn btn-primary my-2 d-block custom-size custom-width" target="_blank" style="text-align: center; width: 200px; padding: 8px 8px; font-size: 17px; border-radius: 15px;">Connect on Linkedin</a>
+          <a href="https://www.linkedin.com/in/pavel-kostyuk-710a521b8" class="btn btn-primary my-2 d-block custom-size custom-width"  target="_blank" style="text-align: center; width: 200px; padding: 8px 8px; font-size: 17px; border-radius: 15px;">Connect on Linkedin</a>
           <a href="mailto:pavel.kostyuk@yh.nackademin.se" class="btn btn-primary my-2 d-block custom-size custom-width" target="_blank" style=" text-align: center ;width: 100px ;padding: 8px 8px; font-size: 17px; border-radius: 15px;">Email me</a>
         </p>
       </div>
     
-     
+
 
       <div class="album py-5 bg-light container">
         <div class="container text-center">
           <h2>Projekt</h2>
+          <div class="mt-5 custom-width bg-gray"></div>
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             {% for project in projects.all %}
             <div class="col">
@@ -138,5 +157,6 @@
 
   <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 
+ 
  </body>
 </html>
