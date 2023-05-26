@@ -123,7 +123,7 @@
             <div class="col">
               <div class="card shadow-sm"style="border-radius: 15px;">
                 <a href="{% url 'detail' project.id %}">
-                  <img src="{{ project.project_image.url }}" alt="" class="card-img-top img-fluid" style="border-top-left-radius: 15px; border-top-right-radius: 15px; border-bottom-left-radius: 0; border-bottom-right-radius: 0;">
+                  <img id="project-image" src="{{ project.project_image.url }}" alt="" class="card-img-top img-fluid" style="border-top-left-radius: 15px; border-top-right-radius: 15px; border-bottom-left-radius: 0; border-bottom-right-radius: 0;">
                   <div class="card-body">
                     <p class="card-text" style="font-size: 1.125rem; color: #333; height: 55px; overflow: hidden;">{{ project.title }}</p>
                   </div>
