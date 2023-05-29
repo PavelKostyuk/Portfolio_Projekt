@@ -98,6 +98,8 @@ CKEDITOR_CONFIGS = {
             'dialogui',
             'elementspath',
             'codesnippet',
+            'image2',
+            
         ]),
   
         'image_previewText': ' ',
