@@ -98,7 +98,9 @@ CKEDITOR_CONFIGS = {
             'dialogui',
             'elementspath',
             'codesnippet',
-            'image2',
+            
+            
+            
             
         ]),
   

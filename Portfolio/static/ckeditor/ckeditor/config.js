@@ -5,6 +5,7 @@
 
 CKEDITOR.editorConfig = function( config ) {
 	config.allowedContent = true;
+	config.extraPlugins = "YouTube";
 	// Define changes to default configuration here. For example:
 	// config.language = 'fr';
 	// config.uiColor = '#AADC6E';
