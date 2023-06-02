@@ -72,7 +72,28 @@
         flex: 1;
       }
 
+      .card:hover {
+        box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.5);
+        transform: scale(1.1);
+        transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+        z-index: 1;  
+      }
 
+      .card-img-top {
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .card:not(:hover) {
+        transform: scale(1);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .custom-container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+      }
 
     </style>
 
@@ -89,9 +110,9 @@
 
   ></p>
 
-  <div class="album py-5 bg-light container" style="margin-top: 56px;">
+  <div class="album py-5 bg-light container" style="margin-top: 56px; margin-bottom: 100px;">
     <div class="container text-center">
-      <div class="mt-5 custom-width bg-gray"></div>
+      <div class="mt-5 custom-width bg-gray custom-container mx-auto"></div>
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 d-flex justify-content-center">
         <div class="col">
           <div class="card shadow-sm" style="border-radius: 15px;">
@@ -99,9 +120,9 @@
             <div class="card-body">
               <p class="card-text" style="font-size: 1.125rem; color: #333; height: 0px; overflow: hidden;">{{ project.title }}</p>
             </div>
-            <div class="card-footer">
-              <p><a href="https://se.linkedin.com/in/pavel-kostyuk-710a521b8?trk=profile-badge" target="_blank" class="btn btn-primary btn-sm" style="border-radius: 15px;padding: 6px 6px;">View Linkedin Profile</a></p>
-              <a href="mailto:pavel.kostyuk@yh.nackademin.se" target="_blank" class="btn btn-primary btn-sm" style="text-align: center; font-size: 15px; border-radius: 15px; padding: 6px 6px;">Email me</a>
+            <div class="card-footer" style="padding-top: 18px; padding-bottom: 20px;">
+              <p><a href="https://se.linkedin.com/in/pavel-kostyuk-710a521b8?trk=profile-badge" target="_blank" class="btn btn-primary btn-sm" style="border-radius: 15px;padding: 5px 10px; width:270px;font-size: 14px">View Linkedin Profile</a></p>
+              <a href="mailto:pavel.kostyuk@yh.nackademin.se" target="_blank" class="btn btn-primary btn-sm" style="text-align: center; font-size: 15px; border-radius: 15px; padding: 5px 10px;width:270px;font-size: 14px">Email me</a>
             </div>
           </div>
         </div>
@@ -114,10 +135,10 @@
     </main>
 
 
-    <footer class="text-body-secondary py-5">
+    <footer class="text-body-secondary py-5" style="position: relative; bottom: 0; width: 100%;">
       <div class="container">
-        <div class="text-center">
-          <p><a href="{% url 'home' %}" class="btn btn-primary my-5" style="border-radius: 15px; width: 60px">Back</a></p>
+        <div class="text-center" style="padding-top: 30px;">
+          <p><a href="{% url 'home' %}" class="btn btn-primary btn-sm" style="border-radius: 15px; width: 60px;padding: 6px 10px;">Back</a></p>
         <p class="mb-1">© This site was made possible thanks to Django, GitHub, DigitalOcean, and NameCheap for providing great support to students!</p>
         <p class="float-end mb-1">
         </p>
