@@ -2,7 +2,7 @@
 
 
 # 🚀 Portfolio with Python and Django/Bootstrap5
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/) [![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue)](https://www.linkedin.com/in/pavel-kostyuk-710a521b8/)![image](https://github.com/PavelKostyuk/Portfolio_Project/assets/112487271/7a42c237-eddb-4110-b77d-f88f8cf9c381)
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/) [![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue)](https://www.linkedin.com/in/pavel-kostyuk-710a521b8/)
 
 
 
