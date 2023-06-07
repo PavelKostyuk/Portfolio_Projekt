@@ -38,7 +38,7 @@ Here's what it looks like running on the server: [Click here to see my Portfolio
 
 
 <details>
-<summary style="font-size: 1.5em;"><h2> 💲 Costs and Good to Know:</summary>
+<summary style="font-size: 1.5em;"><h2> 💲 Costs and Good to Know:</h2></summary>
   
   Additional costs include: purchasing a domain name, SSL certificate and using Cloud Infrastructure.
   To launch the application you will need to register with one of the following Cloud providers or another. I used DigitalOcean (see link below).
@@ -57,7 +57,8 @@ Here's what it looks like running on the server: [Click here to see my Portfolio
   </details>
 
 
-## Technologies
+<details>
+<summary style="font-size: 1.5em;"><h2>Technologies</h2></summary>
 
 - Bootstrap 5
 - Python 3.11.0
@@ -67,6 +68,8 @@ Here's what it looks like running on the server: [Click here to see my Portfolio
 - django-ckeditor 6.5.1
 - whitenoise 6.4.0
 - Pillow 9.5.0
+  
+  </details>
 
 
 
