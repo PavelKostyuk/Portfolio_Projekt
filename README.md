@@ -58,7 +58,7 @@ Here's what it looks like running on the server: [Click here to see my Portfolio
 
 
 <details>
-<summary style="font-size: 1.5em;"><h2>Technologies</h2></summary>
+<summary style="font-size: 1.5em;"><h2>🔬 Technologies</h2></summary>
 
 - Bootstrap 5
 - Python 3.11.0
