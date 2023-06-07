@@ -44,10 +44,6 @@
         display: flex;
       }
 
-      
-      .container-fluid {
-        padding: 0 !important;
-      }
       .custom-width {
         display: inline-block;
         text-align: left;
@@ -69,6 +65,14 @@
       .date-info p {
         margin-bottom: 0;
         display: flex;
+      }
+
+      .fixed-top {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
       }
 
 
@@ -123,10 +127,10 @@
 <main>
 
 
-    <section class="py-5 text-center container-fluid" style="margin-top: 60px; margin-bottom: 5%;">
+    <section class="py-5 text-center container-fluid" style="margin-top: 20px; margin-bottom: 5%;">
         <div class="row py-lg-5">
           <div class="col-lg-7 col-md-8 mx-auto">
-            <img src="{{ project.project_image.url }}" alt="" class="card-img-top img-fluid" style="object-fit: contain; max-height: 450px; max-width: 97%; height: auto;border-radius: 15px;">
+            <img src="{{ project.project_image.url }}" alt="" class="card-img-top img-fluid" style="object-fit: contain; max-height: 450px; max-width: 100%; height: auto;border-radius: 15px;">
             <p style="text-align: left;"></p>
             <h1 class="fw-light"><strong>{{ project.title }}</strong></h1>
             <div class="mt-4 custom-width bg-gray">
