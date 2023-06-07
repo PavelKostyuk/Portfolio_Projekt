@@ -75,6 +75,35 @@ Here's what it looks like running on the server: [Click here to see my Portfolio
 - Pillow 9.5.0
   
   </details>
+  
+  
+<summary style="font-size: 1.5em;"><h2> 🖥️ Run Locally</h2></summary>
+
+Clone the project
+
+```cmd
+  git clone https://github.com/PavelKostyuk/Portfolio_Project.git
+```
+
+Go to the project directory
+
+```cmd
+  cd Portfolio_Project
+```
+
+Install dependencies
+
+```cmd
+  pip install requirements.txt
+```
+
+Start the server
+
+```cmd
+  python manage.py runserver
+```
+
+  </details>
 
 
 
