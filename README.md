@@ -8,7 +8,7 @@ Build a simple portfolio to clearly show the projects you are working on. The id
 
 ## 🧭 Table of contents
 * [Site in production. What you're going to get as a result.](#Site-in-production.-What-you're-going-to-get-as-a-result.)
-* [Knowledge requirements for the project](#Knowledge-requirements-for-the-project:)
+* [Knowledge requirements for the project](#Knowledge-requirements-for-the-project)
 * [Costs and Good to Know](#Costs-and-Good-to-Know)
 * [Technologies](#Technologies)
 
