@@ -37,7 +37,8 @@ Here's what it looks like running on the server: [Click here to see my Portfolio
 
 
 
-## 💲 Costs and Good to Know:
+<details>
+<summary style="font-size: 1.5em;"><h2> 💲 Costs and Good to Know:</summary>
   
   Additional costs include: purchasing a domain name, SSL certificate and using Cloud Infrastructure.
   To launch the application you will need to register with one of the following Cloud providers or another. I used DigitalOcean (see link below).
@@ -52,6 +53,8 @@ Here's what it looks like running on the server: [Click here to see my Portfolio
   - [AWS has a so-called Free Tier that you can use during the first 12 months](https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all)
   - [Google Cloud has a program for students as well but I haven't explored it](https://cloud.google.com/edu/students)
   - [DigitalOcean offers $200 for students to use over a year. Click and see their offer here](https://www.digitalocean.com/github-students)
+  
+  </details>
 
 
 ## Technologies
