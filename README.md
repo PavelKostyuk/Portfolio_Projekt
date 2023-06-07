@@ -18,10 +18,8 @@ Build a simple portfolio to clearly show the projects you are working on. The id
 Here's what it looks like running on the server: [Click here to see my Portfolio build](https://www.pavel-kostyuk-portfolio.tech/)
 
 
-
-
-## 🎓 Knowledge requirements for the project
-
+<details>
+<summary>🎓 Knowledge requirements for the project</summary>
 
 - Basic Python
 - Basic Linux server (Ubuntu)
@@ -30,6 +28,9 @@ Here's what it looks like running on the server: [Click here to see my Portfolio
 - Basic understanding of databases/SQL (even if you will not need to manually create the database and work with database design, you will need to have "a picture in your head" of how it works in the background because the project uses two databases SQL lite and PostgreSQL one for local development and the other is used on the server side in production).
 - Basic understanding of network (HTTP/HTTPS; ports 80, 443, port redirecting, TSL, SSL, SSH)
 - Basic understanding of the software development process.
+
+</details>
+
 
 
 
