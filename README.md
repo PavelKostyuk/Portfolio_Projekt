@@ -2,7 +2,8 @@
 
 
 # 🚀 Portfolio with Python and Django/Bootstrap5
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/) [![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue)]([https://www.linkedin.com/in/your-username-here/](https://www.linkedin.com/in/pavel-kostyuk-710a521b8/))
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/) [![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue)]([https://www.linkedin.com/in/your-username-here/](https://www.linkedin.com/in/pavel-kostyuk-710a521b8/))[![Downloads](https://img.shields.io/badge/dynamic/json?color=green&label=Downloads&query=$.downloads&url=https%3A%2F%2Fapi.github.com%2Frepos%2Fyour-username-here%2Fyour-repo-here%2Freleases)](https://github.com/your-username-here/your-repo-here/releases)![image](https://github.com/PavelKostyuk/Portfolio_Project/assets/112487271/dd72d312-d0e3-4993-9500-7af7ade50b56)
+
 
 
 Build a simple portfolio to clearly show the projects you are working on. The idea of the project is to create a website where you can showcase your ongoing as well as upcoming projects. This project uses the Bootstrap5 template and aims to cover the breadth between the software development process and the infrastructure it is configured on. Learning the DevOps mindset - from code to server.
