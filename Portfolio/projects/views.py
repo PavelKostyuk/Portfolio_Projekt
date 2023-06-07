@@ -12,7 +12,12 @@ def contact(request):
 
 def detail(request, project_id):
     project_detail = get_object_or_404(Project, pk=project_id)
-    return render(request, 'projects/detail.html', {'project':project_detail})
+    projects = Project.objects.all() # get all projects
+    context = {
+        'project': project_detail,
+        'projects': projects, # add projects to the context dictionary
+    }
+    return render(request, 'projects/detail.html', context)
 
 def project_list(request):
     projects = Project.objects.order_by('-created_at')

@@ -74,17 +74,69 @@
         line-height: 1.2;
       }
 
+      .navbar-toggler:hover {
+        border: none;
+        outline: none !important;
+      }
+
+      .navbar-toggler:not(:hover) {
+        border: none;
+        outline: none !important;
+      }
+
+      .navbar-toggler:active {
+        border: none;
+        outline: none !important;
+      }
+
+      .navbar-toggler:focus {
+        outline: none;
+      }
+
+      .navbar-toggler:on click {
+        outline: none !important;
+      }
+ 
+
+
 
     </style>
 
-  <div class="navbar navbar-dark bg-dark shadow-sm fixed-top">
-    <div class="container">
-      <a href="#" class="navbar-brand d-flex align-items-center">
-        <span>Portfolio</span>
-      </a>
-      </button>
+<div class="navbar navbar-dark bg-dark shadow-sm fixed-top">
+  <div class="container">
+    <a href="#" class="navbar-brand d-flex align-items-center">
+      <span>Portfolio</span>
+    </a>
+    <div class="navbar-toggler-wrapper">
+      <div class="navbar-toggler-wrapper">
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</div>
+
+    </div>
+    <div class="collapse navbar-collapse" id="navbarsExample11">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" style="text-align: right; font-size: 18px; margin-right:10px; margin-top: 10px;" aria-current="page" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item dropdown" style="text-align: right;font-size: 18px;margin-right:10px;">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Projekt
+          </a>
+          <ul class="dropdown-menu dropdown-menu-lg-end text-wrap text-break" style="text-align: right;" aria-labelledby="navbarDropdown">
+            {% for project in projects %}
+              <li><a class="dropdown-item" href="{% url 'detail' project.id %}">{{ project.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </li>
+        <li class="nav-item" style="text-align: right;font-size: 18px;margin-right:10px;">
+          <a class="nav-link" href="{% url 'contact' %}">Kontakt</a>
+        </li>
+      </ul>
     </div>
   </div>
+</div>
 </header>
 <main>
 
@@ -110,13 +162,13 @@
           </p>
             </p>
         <p>
-          <a href="{% url 'contact' %}" class="btn btn-primary my-2 d-block custom-size custom-width" style=" text-align: center ;width: 115px ;padding: 8px; font-size: 16px; border-radius: 15px;">Connect</a>
+          <a href="{% url 'contact' %}" class="btn btn-primary my-2 d-block custom-size custom-width" style=" text-align: center ;width: 115px ;padding: 8px; font-size: 16px; border-radius: 15px;">Get in touch</a>
         </p>
       </div>
     
 
 
-      <div class="album py-5 bg-light container">
+      <div class="album py-5 bg-light container" style="margin-bottom: 1%;">
         <div class="container text-center">
           <h2>Projekt</h2>
           <div class="mt-5 custom-width bg-gray"></div>
@@ -143,22 +195,23 @@
     </main>
 
 
-  <footer class="text-body-secondary py-5">
-    <div class="container">
-      <div class="text-center">
-      <p class="mb-1">© This site was made possible thanks to Django, GitHub, DigitalOcean, and NameCheap for providing great support to students!</p>
-      <p class="float-end mb-1">
-      </p>
-        <img src="https://www.djangoproject.com/m/img/badges/djangopowered126x54.gif" border="0" alt="" style="height: 30px; width: 70px; margin-top:20px; margin:0 auto;"/>
-        <img src="{% static 'GitHub.png' %}" border="0" alt="" style="height: 45px; width: 48px; margin-top:15px; margin:0 auto;"/>
-        <img src="{% static 'digitalocean.png' %}" border="0" alt="" style="height: 35px; width: 60px; margin-top:15px; margin:0 auto;"/>
-        <img src="https://www.positivessl.com/images/seals/positivessl_trust_seal_lg_222x54.png" border="0" alt="" style="height: 35px; width: 140px; margin-top:15px; margin:0 auto;"/>
-      </a> </p>
-    </div>
-  </footer>
+    <footer class="text-body-secondary py-5">
+      <div class="container">
+        <div class="text-center">
+          <p><a href="{% url 'home' %}">Back to top</a></p>
+          <p class="mb-1">© This site was made possible thanks to Django, GitHub, DigitalOcean, and NameCheap for providing great support to students!</p>
+          <p class="float-end mb-1">
+          </p>
+          <img src="https://www.djangoproject.com/m/img/badges/djangopowered126x54.gif" border="0" alt="" style="height: 30px; width: 70px; margin-top:20px; margin:0 auto;"/>
+          <img src="{% static 'GitHub.png' %}" border="0" alt="" style="height: 45px; width: 48px; margin-top:15px; margin:0 auto;"/>
+          <img src="{% static 'digitalocean.png' %}" border="0" alt="" style="height: 35px; width: 60px; margin-top:15px; margin:0 auto;"/>
+          <img src="https://www.positivessl.com/images/seals/positivessl_trust_seal_lg_222x54.png" border="0" alt="" style="height: 35px; width: 140px; margin-top:15px; margin:0 auto;"/>
+        </div>
+      </div>
+    </footer>
 
   <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 
- 
+
  </body>
 </html>
