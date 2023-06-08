@@ -3,7 +3,7 @@
 
 # 🚀 Portfolio with Python and Django/Bootstrap5
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/) [![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue)](https://www.linkedin.com/in/pavel-kostyuk-710a521b8/) 
-
+<p><img src="https://komarev.com/ghpvc/?username=pavelkostyuk&label=Repository%20views&color=0e75b6&style=flat" alt="pavelkostyuk"/></p>
 
 
 
