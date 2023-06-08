@@ -72,7 +72,6 @@ Here's what it looks like running on the server: [Click here to see my Portfolio
 - Django 4.2
 - django-ckeditor 6.5.1
 - gunicorn 19.9.0
-- django-ckeditor 6.5.1
 - whitenoise 6.4.0
 - Pillow 9.5.0
   
