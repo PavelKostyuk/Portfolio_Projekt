@@ -102,7 +102,7 @@ virtualenv env
 Activate Virtual env
 
 ```cmd
-cd \env\scripts & activate
+cd env\scripts & activate  
 ```
 
 Install dependencies
