@@ -90,7 +90,7 @@ git clone https://github.com/PavelKostyuk/Portfolio_Projekt.git
 Go to the project directory
 
 ```cmd
-cd Portfolio
+cd Portfolio_Projekt\Portfolio
 ```
 
 Create Virtual Env 
