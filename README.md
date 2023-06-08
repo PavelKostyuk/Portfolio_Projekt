@@ -76,9 +76,9 @@ Here's what it looks like running on the server: [Click here to see my Portfolio
 - Pillow 9.5.0
   
   </details>
-  
+ 
+ ## 🖥️ Run Locally
 <details> 
-<summary style="font-size: 1.5em;"><h2>🖥️ Run Locally</h2></summary>
 
 Clone the project
 
