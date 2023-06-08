@@ -7,9 +7,6 @@
 
 
 
-
-
-
 <p style="font-size: 34px;">
 Build a simple portfolio to clearly show the projects you are working on. The idea of the project is to create a website where you can showcase your ongoing as well as upcoming projects. This project uses the Bootstrap5 template and aims to cover the breadth between the software development process and the infrastructure it is configured on. Learning the DevOps mindset - from code to server.</p>
 
@@ -19,6 +16,22 @@ Build a simple portfolio to clearly show the projects you are working on. The id
 ### 🏗️ Site in production. What you're going to get as a result.
 
 Here's what it looks like running on the server: [Click here to see my Portfolio build](https://www.pavel-kostyuk-portfolio.tech/)
+
+
+<details>
+<summary style="font-size: 1.5em;"><h32>🍭 Features</h2></summary>
+
+- You will be able to show a picture of yourself and write a short text about yourself on the home page.
+- You will be able to showcase your projects on the "home" page.
+- The site has a navigation header, and newly added projects will be displayed there too.
+- You will be able to write and edit your blog posts in the admin panel with simple editing.
+- You will be able to attach images, videos, and links in your posts.
+- You will be able to create a separate contact page with your credentials.
+- The website has functionality to upload images to the server and can use embedded video links.
+- The website adds new projects in descending order from oldest to newest.
+- You can customize the website as you want and use other different elements offered by Bootstrap 5. 
+
+ </details>
 
 
 <details>
