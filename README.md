@@ -17,7 +17,7 @@ Build a simple portfolio to clearly show the projects you are working on. The id
 * [Knowledge requirements for the project](#knowledge-requirements-for-the-project)
 * [Costs and Good to Know](#costs-and-Good-to-Know)
 * [Technologies](#technologies)
-* [Run Locally](#Run-Locally)
+* [Run Locally](#🖥️-Run-Locally)
 
 
 ## 🏗️ Site in production. What you're going to get as a result.
