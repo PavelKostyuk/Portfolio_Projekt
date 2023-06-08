@@ -19,7 +19,7 @@ Here's what it looks like running on the server: [Click here to see my Portfolio
 
 
 <details>
-<summary style="font-size: 1.5em;"><h32>🍭 Features</h2></summary>
+<summary style="font-size: 1.5em;"><h3>🍭 Features</h3></summary>
 
 - You will be able to show a picture of yourself and write a short text about yourself on the home page.
 - You will be able to showcase your projects on the "home" page.
