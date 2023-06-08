@@ -142,17 +142,7 @@ Collect static files
 python manage.py collectstatic
 ```
 
-Run the server
 
-```cmd
-python manage.py runserver
-```
-
-Stop running server
-
-```cmd
-PRESS CTRL+C 
-```
 Create user for admin panel 
 
 ```cmd
@@ -160,11 +150,21 @@ python manage.py createsuperuser
 ```
 - Note: No need for email. Create something simple like "admin" with password "abc123"
 
+Run the server
+
+```cmd
+python manage.py runserver
+```
+
 - Browese to http://127.0.0.1:8000/admin and login
 
 - Press Project and create your first project
 
+Stop running server
 
+```cmd
+PRESS CTRL+C 
+```
 
   </details>
 
