@@ -9,7 +9,7 @@
 
 
 
-Build a simple portfolio to clearly show the projects you are working on. The idea of the project is to create a website where you can showcase your ongoing as well as upcoming projects. This project uses the Bootstrap5 template and aims to cover the breadth between the software development process and the infrastructure it is configured on. Learning the DevOps mindset - from code to server.
+<h3>Build a simple portfolio to clearly show the projects you are working on. The idea of the project is to create a website where you can showcase your ongoing as well as upcoming projects. This project uses the Bootstrap5 template and aims to cover the breadth between the software development process and the infrastructure it is configured on. Learning the DevOps mindset - from code to server.</h3>
 
 
 
@@ -71,7 +71,7 @@ Here's what it looks like running on the server: [Click here to see my Portfolio
   </details>
  
 <details> 
-<summary style="font-size: 1.5em;"><h3>🖥️ Run Locally</h2></summary>
+<summary style="font-size: 1.5em;"><h3>🖥️ Run Locally</h2></h3></summary>
 
   
 ❗Use CMD 
