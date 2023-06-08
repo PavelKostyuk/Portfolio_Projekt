@@ -12,13 +12,6 @@
 Build a simple portfolio to clearly show the projects you are working on. The idea of the project is to create a website where you can showcase your ongoing as well as upcoming projects. This project uses the Bootstrap5 template and aims to cover the breadth between the software development process and the infrastructure it is configured on. Learning the DevOps mindset - from code to server.
 
 
-## 🧭 Table of contents
-* [Site in production. What you're going to get as a result.](#site-in-production.-What-you're-going-to-get-as-a-result.)
-* [Knowledge requirements for the project](#knowledge-requirements-for-the-project)
-* [Costs and Good to Know](#costs-and-Good-to-Know)
-* [Technologies](#technologies)
-* [Run Locally](#🖥️-Run-Locally)
-
 
 ## 🏗️ Site in production. What you're going to get as a result.
 
