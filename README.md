@@ -105,6 +105,12 @@ Activate Virtual env
 cd env\scripts & activate  
 ```
 
+Navigate back to right prokect directory to install dependencies
+
+```cmd
+   cd ..\.. 
+```
+  
 Install dependencies
 
 ```cmd
