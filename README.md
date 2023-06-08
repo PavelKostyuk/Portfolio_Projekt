@@ -136,7 +136,7 @@ python manage.py makemigrations && python manage.py migrate
 ```
 
 
-Collect static images and icons to Django project
+Collect static files
 
 ```cmd
 python manage.py collectstatic
