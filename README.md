@@ -19,7 +19,7 @@ Here's what it looks like running on the server: [Click here to see my Portfolio
 
 
 <details>
-<summary style="font-size: 1.5em;"><h2>🎓 Knowledge requirements for the project</h2></summary>
+<summary style="font-size: 1.5em;"><h3>🎓 Knowledge requirements for the project</h2></summary>
 
 - Basic Python
 - Basic Linux server (Ubuntu)
@@ -38,7 +38,7 @@ Here's what it looks like running on the server: [Click here to see my Portfolio
 
 
 <details>
-<summary style="font-size: 1.5em;"><h2> 💲 Costs and Good to Know:</h2></summary>
+<summary style="font-size: 1.5em;"><h3> 💲 Costs and Good to Know:</h2></summary>
   
   Additional costs include: purchasing a domain name, SSL certificate and using Cloud Infrastructure.
   To launch the application you will need to register with one of the following Cloud providers or another. I used DigitalOcean (see link below).
@@ -58,7 +58,7 @@ Here's what it looks like running on the server: [Click here to see my Portfolio
 
 
 <details>
-<summary style="font-size: 1.5em;"><h2>🔬 Technologies</h2></summary>
+<summary style="font-size: 1.5em;"><h3>🔬 Technologies</h2></summary>
 
 - Bootstrap 5/ HTML/ CSS/ Javascript
 - Python 3.11.0
@@ -71,7 +71,7 @@ Here's what it looks like running on the server: [Click here to see my Portfolio
   </details>
  
 <details> 
-<summary style="font-size: 1.5em;"><h2>🖥️ Run Locally</h2></summary>
+<summary style="font-size: 1.5em;"><h3>🖥️ Run Locally</h2></summary>
 
   
 ❗Use CMD 
