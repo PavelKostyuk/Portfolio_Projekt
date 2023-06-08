@@ -13,11 +13,11 @@ Build a simple portfolio to clearly show the projects you are working on. The id
 
 
 ## 🧭 Table of contents
-* [Site in production. What you're going to get as a result.](#Site-in-production.-What-you're-going-to-get-as-a-result.)
-* [Knowledge requirements for the project](#Knowledge-requirements-for-the-project)
-* [Costs and Good to Know](#Costs-and-Good-to-Know)
-* [Technologies](#Technologies)
-* [Run Locally](#Run-Locally)
+* [Site in production. What you're going to get as a result.](#site-in-production.-What-you're-going-to-get-as-a-result.)
+* [Knowledge requirements for the project](#knowledge-requirements-for-the-project)
+* [Costs and Good to Know](#costs-and-Good-to-Know)
+* [Technologies](#technologies)
+* [Run Locally](#run-locally)
 
 
 ## 🏗️ Site in production. What you're going to get as a result.
