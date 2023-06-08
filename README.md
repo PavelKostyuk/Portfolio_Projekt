@@ -2,6 +2,12 @@
 
 
 # 🚀 Portfolio with Python and Django/Bootstrap5
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/) [![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue)](https://www.linkedin.com/in/pavel-kostyuk-710a521b8/)
+
+
+
+
+
 
 Build a simple portfolio to clearly show the projects you are working on. The idea of the project is to create a website where you can showcase your ongoing as well as upcoming projects. This project uses the Bootstrap5 template and aims to cover the breadth between the software development process and the infrastructure it is configured on. Learning the DevOps mindset - from code to server.
 
@@ -11,6 +17,7 @@ Build a simple portfolio to clearly show the projects you are working on. The id
 * [Knowledge requirements for the project](#Knowledge-requirements-for-the-project)
 * [Costs and Good to Know](#Costs-and-Good-to-Know)
 * [Technologies](#Technologies)
+* [Run Locally](#Run-Locally)
 
 
 ## 🏗️ Site in production. What you're going to get as a result.
@@ -18,10 +25,8 @@ Build a simple portfolio to clearly show the projects you are working on. The id
 Here's what it looks like running on the server: [Click here to see my Portfolio build](https://www.pavel-kostyuk-portfolio.tech/)
 
 
-
-
-## 🎓 Knowledge requirements for the project
-
+<details>
+<summary style="font-size: 1.5em;"><h2>🎓 Knowledge requirements for the project</h2></summary>
 
 - Basic Python
 - Basic Linux server (Ubuntu)
@@ -31,11 +36,16 @@ Here's what it looks like running on the server: [Click here to see my Portfolio
 - Basic understanding of network (HTTP/HTTPS; ports 80, 443, port redirecting, TSL, SSL, SSH)
 - Basic understanding of the software development process.
 
+</details>
 
 
 
 
-## 💲 Costs and Good to Know:
+
+
+
+<details>
+<summary style="font-size: 1.5em;"><h2> 💲 Costs and Good to Know:</h2></summary>
   
   Additional costs include: purchasing a domain name, SSL certificate and using Cloud Infrastructure.
   To launch the application you will need to register with one of the following Cloud providers or another. I used DigitalOcean (see link below).
@@ -50,9 +60,12 @@ Here's what it looks like running on the server: [Click here to see my Portfolio
   - [AWS has a so-called Free Tier that you can use during the first 12 months](https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all)
   - [Google Cloud has a program for students as well but I haven't explored it](https://cloud.google.com/edu/students)
   - [DigitalOcean offers $200 for students to use over a year. Click and see their offer here](https://www.digitalocean.com/github-students)
+  
+  </details>
 
 
-## Technologies
+<details>
+<summary style="font-size: 1.5em;"><h2>🔬 Technologies</h2></summary>
 
 - Bootstrap 5
 - Python 3.11.0
@@ -62,6 +75,37 @@ Here's what it looks like running on the server: [Click here to see my Portfolio
 - django-ckeditor 6.5.1
 - whitenoise 6.4.0
 - Pillow 9.5.0
+  
+  </details>
+  
+<details> 
+<summary style="font-size: 1.5em;"><h2> 🖥️ Run Locally</h2></summary>
+
+Clone the project
+
+```cmd
+  git clone https://github.com/PavelKostyuk/Portfolio_Project.git
+```
+
+Go to the project directory
+
+```cmd
+  cd Portfolio_Project
+```
+
+Install dependencies
+
+```cmd
+  pip install requirements.txt
+```
+
+Start the server
+
+```cmd
+  python manage.py runserver
+```
+
+  </details>
 
 
 
