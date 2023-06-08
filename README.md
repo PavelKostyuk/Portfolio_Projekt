@@ -156,9 +156,9 @@ Run the server
 python manage.py runserver
 ```
 
-- Browese to http://127.0.0.1:8000/admin and login
+- Browse to http://127.0.0.1:8000/admin on your local machine and login
+- Press "Project" and create your first project.
 
-- Press Project and create your first project
 
 Stop running server
 
