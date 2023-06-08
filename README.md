@@ -84,25 +84,50 @@ Here's what it looks like running on the server: [Click here to see my Portfolio
 Clone the project
 
 ```cmd
-  git clone https://github.com/PavelKostyuk/Portfolio_Project.git
+  git clone https://github.com/PavelKostyuk/Portfolio_Projekt.git
 ```
 
 Go to the project directory
 
 ```cmd
-  cd Portfolio_Project
+  cd Portfolio
+```
+
+Create Virtual Env 
+
+```cmd
+     virtualenv env 
+```
+
+Activate Virtual env
+
+```cmd
+   cd \env\scripts & activate
 ```
 
 Install dependencies
 
 ```cmd
-  pip install requirements.txt
+  pip install -r requirements.txt
 ```
-
-Start the server
+  
+Makemigrations and migrate to create DB (SQLlite)
 
 ```cmd
-  python manage.py runserver
+  python manage.py makemigrations && python manage.py migrate
+```
+
+
+Collect static images and icons to Django project
+
+```cmd
+  python manage.py collectstatic
+```
+
+Run the server
+
+```cmd
+     python manage.py runserver
 ```
 
   </details>
