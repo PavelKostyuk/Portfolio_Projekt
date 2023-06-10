@@ -87,7 +87,7 @@ Here's what it looks like running on the server: [Click here to see my Portfolio
   </details>
  
 <details> 
-<summary style="font-size: 1.5em;"><h3>🖥️ Run Locally</h2></h3></summary>
+<summary style="font-size: 1.5em;"><h3>🖥️ Run Locally</h3></summary>
 
   
 ❗Use CMD 
@@ -168,6 +168,24 @@ PRESS CTRL+C
 
   </details>
 
+<details> 
+<summary style="font-size: 1.5em;"><h3> 📖 Acknowledgements</h3></summary>
 
 
+- [Bootstrap5 Album-theme](https://getbootstrap.com/docs/5.3/examples/album/)
+- [Quickstart: Deploy a Python (Django or Flask) web app to Azure App Service](https://learn.microsoft.com/en-us/azure/app-service/quickstart-pythontabs=flask%2Cwindows%2Cazure-cli%2Cvscode-deploy%2Cdeploy-instructions-azportal%2Cterminal-bash%2Cdeploy-instructions-zip-azcli)
+- [Django 4 - Build Portfolio Project with Bootstrap 5 (2023) - Udemy.](https://www.udemy.com/course/django-3-build-portfolio-project-with-django-from-scratch/)
+- [Python Django Dev To Deployment (2023) - Udemy.](https://www.udemy.com/course/python-django-dev-to-deployment/)
+- [Deploy Django on Linux - Udemy.](https://www.udemy.com/course/deploy-django-on-linux/)
+- [How-do-i-install-an-ssl-certificate-on-a-droplet](https://docs.digitalocean.com/support/how-do-i-install-an-ssl-certificate-on-a-droplet/)
+- [How-to-install-ssl-certificates](https://www.namecheap.com/support/knowledgebase/article.aspx/795/14/how-to-install-ssl-certificates/)
+- [How-to-create-a-self-signed-ssl-certificate-for-nginx-in-ubuntu-20-04-1](https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-nginx-in-ubuntu-20-04-1)
+- [Dokumentation från DigitalOcean – “How To Set Up Django with Postgres, Nginx, and Gunicorn on Ubuntu 18.04”](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-18-04)
+- [Simple Django Deployment (part 12) - Setting up Supervisor -YouTube](https://youtu.be/ny2L15dOf4Q)
+- [Django- CKEditor Tutorial (+ CodeSnippet) -YouTube](https://youtu.be/L6y6cn1XUfw)
+- [Awesome Readme Templates](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
+- [Awesome README](https://github.com/matiassingers/awesome-readme)
+- [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
+
+ </details>
 
