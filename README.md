@@ -48,11 +48,6 @@ Here's what it looks like running on the server: [Click here to see my Portfolio
 </details>
 
 
-
-
-
-
-
 <details>
 <summary style="font-size: 1.5em;"><h3> 💲 Costs and Good to Know:</h2></summary>
   
