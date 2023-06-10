@@ -188,7 +188,22 @@ Here are some resources I have used to make this project possible. I encourage y
  </details>
  
  <details> 
-<summary style="font-size: 1.5em;"><h3> ✒️ License</summary>
+<summary style="font-size: 1.5em;"><h3>✒️ FAQ</summary>
+
+#### Question 1: How do I deploy this project in a live production environment?
+It depends on which platform you decide to use and how you want to deploy it. There are various ways to do it, so you can choose the one you like. I have provided information about deployment in the “acknowledgments” section. I used DigitalOcean as a cloud provider.
+
+#### Question 2: Will you add new features to the project?
+Yes, I will implement other things in the project and will update the repository accordingly with new features that I develop.
+
+#### Question 3: Can I use this code and build my website on top of your initial setup?
+Yes, you can modify the code as you like.
+ 
+ </details>
+
+ 
+ <details> 
+<summary style="font-size: 1.5em;"><h3> ⚖️ License</summary>
 
 MIT License
 
