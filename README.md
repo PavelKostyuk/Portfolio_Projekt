@@ -38,6 +38,7 @@ Here's what it looks like running on the server: [Click here to see my Portfolio
 <summary style="font-size: 1.5em;"><h3>🎓 Knowledge requirements for the project</h2></summary>
 
 - Basic Python
+- Basic Django
 - Basic Linux server (Ubuntu)
 - Basic understanding and experience working with GIT/GitHub (version control)
 - Basic understanding of Cloud infrastructure
