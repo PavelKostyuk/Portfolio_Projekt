@@ -170,6 +170,9 @@ PRESS CTRL+C
 
 <details> 
 <summary style="font-size: 1.5em;"><h3> 📖 Acknowledgements</h3></summary>
+ 
+Here are some resources I have used to make this project possible. I encourage you to use them to accomplish your project successfully.
+
 
 
 - [Bootstrap5 Album-theme](https://getbootstrap.com/docs/5.3/examples/album/)
