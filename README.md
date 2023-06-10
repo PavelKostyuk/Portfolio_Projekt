@@ -191,4 +191,11 @@ Here are some resources I have used to make this project possible. I encourage y
 - [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
 
  </details>
+ 
+ <details> 
+<summary style="font-size: 1.5em;"><h3> ✒️ License</summary>
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+ </details>
 
