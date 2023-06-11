@@ -1,9 +1,3 @@
----
-coverY: 0
-layout: landing
----
-
-# README
 
 ![Logo](https://www.mattlayman.com/img/python-django.png)
 
