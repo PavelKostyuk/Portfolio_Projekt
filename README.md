@@ -50,7 +50,7 @@ Here's what it looks like running on the server: [Click here to see my Portfolio
 Additional costs include: purchasing a domain name, SSL certificate and using Cloud Infrastructure. To launch the application you will need to register with one of the following Cloud providers or another. I used DigitalOcean (see link below).
 
 * Domain names are relatively cheap if they are .se or .eu. The price goes up for .com .tech and .co but we're talking about a few hundred SEK at most.
-* ​​​​​​​SSL certificates are something you can save on as instead of buying one, you can configure one from Let'sEncrypt on the server side with automatic updates (their certificates are valid for three months)
+* SSL certificates are something you can save on as instead of buying one, you can configure one from Let'sEncrypt on the server side with automatic updates (their certificates are valid for three months)
 * Cloud Infrastructure or rather the resources that will be needed are minimal. Of course you can register with one of the big companies that offer Cloud solutions - Azure, AWS, Google and pay for what you use but as a student you can use discounts that go along with GitHub's "bundle" for students.
 * [Azure offers $100 for students where you can test their services and use a whole range of different services for free for 12 months](https://azure.microsoft.com/en-us/free/students/)
 * [AWS has a so-called Free Tier that you can use during the first 12 months](https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank\&all-free-tier.sort-order=asc\&awsf.Free%20Tier%20Types=\*all\&awsf.Free%20Tier%20Categories=\*all)
