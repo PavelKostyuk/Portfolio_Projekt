@@ -7,13 +7,13 @@
 
 Build a simple portfolio to clearly show the projects you are working on. The idea of the project is to create a website where you can showcase your ongoing as well as upcoming projects. This project uses the Bootstrap5 template and aims to cover the breadth between the software development process and the infrastructure it is configured on. Learning the DevOps mindset - from code to server.
 
-#### 🏗️ Site in production. What you're going to get as a result.
+## 🏗️ Site in production. What you're going to get as a result.
 
 Here's what it looks like running on the server: [Click here to see my Portfolio build](https://www.pavel-kostyuk-portfolio.tech/)
 
 <details>
 
-<summary style="font-size: 1.5em;"><h2>🍭 Features</summary>
+<summary style="font-size: 1.5em;"><h2> 🍭 Features</summary>
 
 * This website is adaptive to screen size and works well on both mobile and desktop.
 * You will be able to show a picture of yourself and write a short text about yourself on the home page.
@@ -30,7 +30,7 @@ Here's what it looks like running on the server: [Click here to see my Portfolio
 
 <details>
 
-<summary>🎓 Knowledge requirements for the project</summary>
+<summary style="font-size: 1.5em;"><h2>🎓 Knowledge requirements for the project</summary>
 
 * Basic Python
 * Basic Django
@@ -45,7 +45,7 @@ Here's what it looks like running on the server: [Click here to see my Portfolio
 
 <details>
 
-<summary>💲 Costs and Good to Know:</summary>
+<summary style="font-size: 1.5em;"><h2>💲 Costs and Good to Know:</summary>
 
 Additional costs include: purchasing a domain name, SSL certificate and using Cloud Infrastructure. To launch the application you will need to register with one of the following Cloud providers or another. I used DigitalOcean (see link below).
 
@@ -61,7 +61,7 @@ Additional costs include: purchasing a domain name, SSL certificate and using Cl
 
 <details>
 
-<summary>🔬 Technologies</summary>
+<summary style="font-size: 1.5em;"><h2>🔬 Technologies</summary>
 
 * Bootstrap 5/ HTML/ CSS/ Javascript
 * Python 3.11.0
@@ -75,7 +75,7 @@ Additional costs include: purchasing a domain name, SSL certificate and using Cl
 
 <details>
 
-<summary>🖥️ Run Locally</summary>
+<summary style="font-size: 1.5em;"><h2> 🖥️ Run Locally</summary>
 
 ❗Use CMD
 
@@ -154,7 +154,7 @@ PRESS CTRL+C
 
 <details>
 
-<summary>📖 Acknowledgements</summary>
+<summary style="font-size: 1.5em;"><h2> 📖 Acknowledgements</summary>
 
 Here are some resources I have used to make this project possible. I encourage you to use them to accomplish your project successfully.
 
@@ -177,7 +177,7 @@ Here are some resources I have used to make this project possible. I encourage y
 
 <details>
 
-<summary>✒️ FAQ</summary>
+<summary style="font-size: 1.5em;"><h2> ✒️ FAQ</summary>
 
 **Question 1: How do I deploy this project in a live production environment?**
 
@@ -195,7 +195,7 @@ Yes, you can modify the code as you like.
 
 <details>
 
-<summary>⚖️ License</summary>
+<summary style="font-size: 1.5em;"><h2>⚖️ License</summary>
 
 MIT License
 
