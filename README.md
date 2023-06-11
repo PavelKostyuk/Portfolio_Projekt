@@ -21,6 +21,7 @@ Here's what it looks like running on the server: [Click here to see my Portfolio
 <details>
 <summary style="font-size: 1.5em;"><h3>🍭 Features</h3></summary>
 
+- This website is adaptive to screen size and works well on both mobile and desktop.
 - You will be able to show a picture of yourself and write a short text about yourself on the home page.
 - You will be able to showcase your projects on the "home" page.
 - The site has a navigation header, and newly added projects will be displayed there too.
