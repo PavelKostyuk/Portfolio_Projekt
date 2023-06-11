@@ -13,7 +13,7 @@ Here's what it looks like running on the server: [Click here to see my Portfolio
 
 <details>
 
-<summary>🍭 Features</summary>
+<summary style="font-size: 1.5em;"><h2>🍭 Features</summary>
 
 * This website is adaptive to screen size and works well on both mobile and desktop.
 * You will be able to show a picture of yourself and write a short text about yourself on the home page.
