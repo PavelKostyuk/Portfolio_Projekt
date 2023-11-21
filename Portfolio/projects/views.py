@@ -22,3 +22,4 @@ def detail(request, project_id):
 def project_list(request):
     projects = Project.objects.order_by('-created_at')
     return render(request, 'project_list.html', {'projects': projects})
+
