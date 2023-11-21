@@ -66,4 +66,3 @@ yarg==0.1.9
 pytest==7.2.0
 pytest-django==4.7.0
 pytest-pylint==0.21.0
-```
