@@ -41,7 +41,7 @@ jobs:
               run: python -m pip install -r Portfolio/requirements.txt
 
             - name: Run tests
-              run: pytest Portfolio/tests/unit
+              run: pytest /tests/unit
               continue-on-error: false  # This ensures the build fails if the tests fail
 
 
