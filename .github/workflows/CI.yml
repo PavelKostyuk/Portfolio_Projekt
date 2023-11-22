@@ -58,5 +58,5 @@ jobs:
 
             - name: Push Docker image to Docker Hub
               run: |
-                  docker login -u pavelkostyuk -p secrets.DOCKER_HUB_PAT
+                  docker login -u pavelkostyuk --password-stdin <<< secrets.DOCKER_HUB_PAT
                   docker push pavelkostyuk/portfolio
