@@ -55,3 +55,8 @@ jobs:
               run: |
                   cd Portfolio
                   docker build -t portfolio .
+
+            - name: Push Docker image to Docker Hub
+              run: |
+                  docker login -u pavelkostyuk -p secrets.DOCKER_HUB_PAT
+                  docker push pavelkostyuk/portfolio
