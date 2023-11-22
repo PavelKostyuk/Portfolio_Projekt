@@ -8,8 +8,12 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 RUN pip install django-admin
 
-RUN python manage.py collectstatic --no-input
+# Make migrations and apply them during container build
+RUN python manage.py makemigrations && \
+    python manage.py migrate && \
+    python manage.py collectstatic --no-input
 
 EXPOSE 8000
 
 CMD ["gunicorn", "--bind", ":8000", "Portfolio.wsgi:application"]
+
