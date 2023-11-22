@@ -54,5 +54,5 @@ jobs:
 
             - name: Build Docker image
               run: |
-                  cd Portfolio
+                  cd portfolio
                   docker build -t Portfolio .
