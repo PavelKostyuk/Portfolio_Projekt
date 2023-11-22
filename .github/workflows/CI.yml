@@ -44,14 +44,21 @@ jobs:
               continue-on-error: false  # This ensures the build fails if the tests fail
 
     build:
-      needs: run-test
-      runs-on: ubuntu-latest  # Adjust the runs-on field as per your requirements
-   
-      steps:
+        needs: run-test
+        runs-on: ubuntu-latest
+                 
+        steps:
+
             - name: Checkout code
               uses: actions/checkout@v4
-
+              
             - name: Build Docker image
               run: |
-                  cd Portfolio
-                  docker build -t portfolio .
+                    docker build -t pavelkostyuk/portfolio Portfolio
+              
+            - name: Push Docker image to Docker Hub
+              run: |
+                    echo ${{ secrets.DOCKER_HUB_PAT }} | docker login -u pavelkostyuk --password-stdin
+                    docker push pavelkostyuk/portfolio
+              
+                
