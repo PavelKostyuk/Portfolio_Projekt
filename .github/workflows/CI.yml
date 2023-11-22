@@ -54,5 +54,5 @@ jobs:
 
             - name: Build Docker image
               run: |
-                  cd backend
-                  docker build -t pingurl .
+                  cd Portfolio
+                  docker build -t Portfolio .
