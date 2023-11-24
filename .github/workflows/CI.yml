@@ -77,7 +77,7 @@ jobs:
             ssh -o StrictHostKeyChecking=no -i ./ssh_key.pem serveradmin@${DROPLET_IP_ADDRESS} '
     
               # Set up Minikube and Docker
-              minikube start --driver=docker --memory=1900mb
+              minikube start --driver=docker --memory=2000mb
               kubectl config use-context minikube
               eval $(minikube docker-env)
     
@@ -106,10 +106,9 @@ jobs:
               else
                 echo "No old image found matching the criteria."
               fi
-    
-              # Pull Docker image using Minikube
-              docker pull pavelkostyuk/portfolio:latest
-    
+
+              
               # Apply the Deployment
-              kubectl apply -f Portfolio/deployment.yaml
+              wget https://raw.githubusercontent.com/PavelKostyuk/Portfolio_Projekt/main/Portfolio/deployment.yaml -O deployment.yaml
+              kubectl apply -f deployment.yaml
             '

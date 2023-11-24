@@ -12,8 +12,11 @@ spec:
       labels:
         app: my-django-app
     spec:
+      imagePullSecrets:
+      - name: my-registry-key
       containers:
       - name: my-django-app
         image: pavelkostyuk/portfolio:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 8000
