@@ -111,4 +111,8 @@ jobs:
               # Apply the Deployment
               wget https://raw.githubusercontent.com/PavelKostyuk/Portfolio_Projekt/main/Portfolio/deployment.yaml -O deployment.yaml
               kubectl apply -f deployment.yaml
+
+              # Apply the Service
+              wget https://raw.githubusercontent.com/PavelKostyuk/Portfolio_Projekt/main/Portfolio/service.yaml -O service.yaml
+              kubectl apply -f service.yaml
             '
