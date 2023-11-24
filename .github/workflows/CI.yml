@@ -111,5 +111,6 @@ jobs:
               docker pull pavelkostyuk/portfolio:latest
     
               # Apply the Deployment
-              kubectl apply -f Portfolio/deployment.yaml
+              wget https://raw.githubusercontent.com/PavelKostyuk/Portfolio_Projekt/main/Portfolio/deployment.yaml -O deployment.yaml
+              kubectl apply -f deployment.yaml
             '
