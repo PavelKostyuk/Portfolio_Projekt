@@ -77,7 +77,7 @@ jobs:
             ssh -o StrictHostKeyChecking=no -i ./ssh_key.pem serveradmin@${DROPLET_IP_ADDRESS} '
     
               # Set up Minikube and Docker
-              minikube start --driver=docker --memory=1850mb
+              minikube start --driver=docker --memory=1900mb
               kubectl config use-context minikube
               eval $(minikube docker-env)
     
@@ -110,9 +110,6 @@ jobs:
               # Pull Docker image using Minikube
               docker pull pavelkostyuk/portfolio:latest
     
-              # Start pod
-              kubectl run my-django-app --image=pavelkostyuk/portfolio:latest --port=8000
-
-              # Expose pod as a service
-              kubectl expose deployment my-django-app --type=NodePort --port=8000
+              # Apply the Deployment
+              kubectl apply -f Portfolio/deployment.yaml
             '
