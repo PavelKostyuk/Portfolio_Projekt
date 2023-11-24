@@ -65,7 +65,7 @@ jobs:
     deploy:
       needs: build
       runs-on: ubuntu-latest
-      
+          
       steps:
         - name: SSH into Droplet and manage Docker and Minikube
           env:
@@ -75,11 +75,14 @@ jobs:
             echo "${{ secrets.SSH_PRIVATE_KEY }}" > ssh_key.pem
             chmod 600 ssh_key.pem
             ssh -o StrictHostKeyChecking=no -i ./ssh_key.pem serveradmin@${DROPLET_IP_ADDRESS} '
-            
+    
               # Set up Minikube and Docker
-              minikube start --driver=docker
+              minikube start --driver=docker --memory=1000mb
               kubectl config use-context minikube
               eval $(minikube docker-env)
+    
+              # Check if kubectl is installed and accessible
+              kubectl version --client
     
               # Delete existing pod if running
               CONTAINER_ID=$(kubectl get pods -o=name | grep pavelkostyuk/portfolio | cut -d'/' -f2)
@@ -110,4 +113,3 @@ jobs:
               # Start pod
               kubectl run my-django-app --image=pavelkostyuk/portfolio:latest --port=8000
             '
-                  
