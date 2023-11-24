@@ -78,12 +78,21 @@ jobs:
               ssh -o StrictHostKeyChecking=no -i ./ssh_key.pem serveradmin@${DROPLET_IP_ADDRESS} '
 
                 CONTAINER_ID=$(docker ps -q --filter "ancestor=pavelkostyuk/portfolio" --filter "publish=8000")
+                OLD_IMAGE_ID=$(docker images -q pavelkostyuk/portfolio:latest)
+
                 if [ -n "$CONTAINER_ID" ]; then
                   docker stop $CONTAINER_ID
-                  docker rm $CONTAINER_ID
+                  docker rm -f $CONTAINER_ID
                 else
                   echo "No container found matching the criteria."
                 fi
+
+                if [ -n "$OLD_IMAGE_ID" ]; then
+                  docker rmi -f $OLD_IMAGE_ID
+                else
+                  echo "No old image found matching the criteria."
+                fi
+                
                   docker pull pavelkostyuk/portfolio:latest
                   docker run -d -p 8000:8000 pavelkostyuk/portfolio:latest
                 '
