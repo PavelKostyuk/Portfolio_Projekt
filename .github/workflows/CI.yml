@@ -36,8 +36,8 @@ jobs:
 
             - name: Install dependencies
               run: | 
-                   python -m pip install --upgrade pip
-                   python -m pip install -r Portfolio/requirements.txt
+                  python -m pip install --upgrade pip
+                  python -m pip install -r Portfolio/requirements.txt
 
             - name: Run tests
               run: pytest Portfolio/Portfolio/tests/unit
@@ -55,45 +55,59 @@ jobs:
 
             - name: Build Docker image
               run: |
-                    docker build -t pavelkostyuk/portfolio Portfolio
+                  docker build -t pavelkostyuk/portfolio Portfolio
 
             - name: Push Docker image to Docker Hub
               run: |
-                    echo ${{ secrets.DOCKER_HUB_PAT }} | docker login -u pavelkostyuk --password-stdin
-                    docker push pavelkostyuk/portfolio
+                  echo ${{ secrets.DOCKER_HUB_PAT }} | docker login -u pavelkostyuk --password-stdin
+                  docker push pavelkostyuk/portfolio
 
     deploy:
-        needs: build
-
-        runs-on: ubuntu-latest
-
-        steps:
-          - name: SSH into Droplet and manage Docker container
-            env:
-              SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-              DROPLET_IP_ADDRESS: ${{ secrets.DROPLET_IP_ADDRESS }}
-            run: |
-              echo "${{ secrets.SSH_PRIVATE_KEY }}" > ssh_key.pem
-              chmod 600 ssh_key.pem
-              ssh -o StrictHostKeyChecking=no -i ./ssh_key.pem serveradmin@${DROPLET_IP_ADDRESS} '
-
-
-                OLD_IMAGE_ID=$(docker images -q pavelkostyuk/portfolio:latest)
-                CONTAINER_ID=$(docker ps -aqf "ancestor=pavelkostyuk/portfolio")
-
-                if [ -n "$CONTAINER_ID" ]; then
-                  docker stop $CONTAINER_ID
-                  docker rm $CONTAINER_ID
-                else
-                  echo "No container found matching the criteria."
-                fi
-
-                if [ -n "$OLD_IMAGE_ID" ]; then
-                  docker rmi -f $OLD_IMAGE_ID
-                else
-                  echo "No old image found matching the criteria."
-                fi
-
-                  docker pull pavelkostyuk/portfolio:latest
-                  docker run -d -p 8000:8000 pavelkostyuk/portfolio:latest
-                '
+      needs: build
+      runs-on: ubuntu-latest
+      
+      steps:
+        - name: SSH into Droplet and manage Docker and Minikube
+          env:
+            SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+            DROPLET_IP_ADDRESS: ${{ secrets.DROPLET_IP_ADDRESS }}
+          run: |
+            echo "${{ secrets.SSH_PRIVATE_KEY }}" > ssh_key.pem
+            chmod 600 ssh_key.pem
+            ssh -o StrictHostKeyChecking=no -i ./ssh_key.pem serveradmin@${DROPLET_IP_ADDRESS} '
+            
+              # Set up Minikube and Docker
+              minikube start --driver=docker
+              kubectl config use-context minikube
+              eval $(minikube docker-env)
+    
+              # Delete existing pod if running
+              CONTAINER_ID=$(kubectl get pods -o=name | grep pavelkostyuk/portfolio | cut -d'/' -f2)
+              if [ -n "$CONTAINER_ID" ]; then
+                kubectl delete pod $CONTAINER_ID
+              else
+                echo "No pod found matching the criteria."
+              fi
+    
+              # Delete image if exists
+              OLD_IMAGE_ID=$(docker images -q pavelkostyuk/portfolio:latest)
+              CONTAINER_ID=$(docker ps -aqf "ancestor=pavelkostyuk/portfolio")
+              if [ -n "$CONTAINER_ID" ]; then
+                docker stop $CONTAINER_ID
+                docker rm $CONTAINER_ID
+              else
+                echo "No container found matching the criteria."
+              fi
+              if [ -n "$OLD_IMAGE_ID" ]; then
+                docker rmi -f $OLD_IMAGE_ID
+              else
+                echo "No old image found matching the criteria."
+              fi
+    
+              # Pull Docker image using Minikube
+              docker pull pavelkostyuk/portfolio:latest
+    
+              # Start pod
+              kubectl run my-django-app --image=pavelkostyuk/portfolio:latest --port=8000
+            '
+                  
