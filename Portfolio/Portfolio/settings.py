@@ -17,7 +17,8 @@ DEBUG = True
 
 SECURE_SSL_REDIRECT = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '165.227.165.97']
+
 
 
 
