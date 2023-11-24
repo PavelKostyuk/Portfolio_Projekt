@@ -77,7 +77,7 @@ jobs:
             ssh -o StrictHostKeyChecking=no -i ./ssh_key.pem serveradmin@${DROPLET_IP_ADDRESS} '
     
               # Set up Minikube and Docker
-              minikube start --driver=docker --memory=1000mb
+              minikube start --driver=docker --memory=1850mb
               kubectl config use-context minikube
               eval $(minikube docker-env)
     
