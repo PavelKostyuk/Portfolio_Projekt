@@ -47,16 +47,16 @@ jobs:
         needs: run-test
 
         runs-on: ubuntu-latest
-                 
+
         steps:
 
             - name: Checkout code
               uses: actions/checkout@v4
-              
+
             - name: Build Docker image
               run: |
                     docker build -t pavelkostyuk/portfolio Portfolio
-              
+
             - name: Push Docker image to Docker Hub
               run: |
                     echo ${{ secrets.DOCKER_HUB_PAT }} | docker login -u pavelkostyuk --password-stdin
@@ -73,7 +73,9 @@ jobs:
               SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
               DROPLET_IP_ADDRESS: ${{ secrets.DROPLET_IP_ADDRESS }}
             run: |
-              ssh -o StrictHostKeyChecking=no -i <(echo "${SSH_PRIVATE_KEY}") serveradmin@${DROPLET_IP_ADDRESS} '
+              echo "${{ secrets.SSH_PRIVATE_KEY }}" > ssh_key.pem
+              chmod 600 ssh_key.pem
+              ssh -o StrictHostKeyChecking=no -i ./ssh_key.pem serveradmin@${DROPLET_IP_ADDRESS} '
 
                 docker stop $(docker ps -q --filter "ancestor=pavelkostyuk/portfolio" --filter "publish=8000:8000")
                 docker rm $(docker ps -aq --filter "ancestor=pavelkostyuk/portfolio" --filter "publish=8000:8000")
