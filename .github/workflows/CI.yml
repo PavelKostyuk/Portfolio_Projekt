@@ -77,9 +77,13 @@ jobs:
               chmod 600 ssh_key.pem
               ssh -o StrictHostKeyChecking=no -i ./ssh_key.pem serveradmin@${DROPLET_IP_ADDRESS} '
 
-              docker stop $(docker ps -q --filter "ancestor=pavelkostyuk/portfolio" --filter "publish=8000:8000") || true
-              docker rm $(docker ps -aq --filter "ancestor=pavelkostyuk/portfolio" --filter "publish=8000:8000") || true
-
-                docker pull pavelkostyuk/portfolio:latest
-                docker run -d -p 8000:8000 pavelkostyuk/portfolio:latest
-              '
+                CONTAINER_ID=$(docker ps -q --filter "ancestor=pavelkostyuk/portfolio" --filter "publish=8000")
+                if [ -n "$CONTAINER_ID" ]; then
+                  docker stop $CONTAINER_ID
+                  docker rm $CONTAINER_ID
+                else
+                  echo "No container found matching the criteria."
+                fi
+                  docker pull pavelkostyuk/portfolio:latest
+                  docker run -d -p 8000:8000 pavelkostyuk/portfolio:latest
+                '
