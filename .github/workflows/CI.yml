@@ -77,8 +77,8 @@ jobs:
               chmod 600 ssh_key.pem
               ssh -o StrictHostKeyChecking=no -i ./ssh_key.pem serveradmin@${DROPLET_IP_ADDRESS} '
 
-                docker stop $(docker ps -q --filter "ancestor=pavelkostyuk/portfolio" --filter "publish=8000:8000")
-                docker rm $(docker ps -aq --filter "ancestor=pavelkostyuk/portfolio" --filter "publish=8000:8000")
+              docker stop $(docker ps -q --filter "ancestor=pavelkostyuk/portfolio" --filter "publish=8000:8000") || true
+              docker rm $(docker ps -aq --filter "ancestor=pavelkostyuk/portfolio" --filter "publish=8000:8000") || true
 
                 docker pull pavelkostyuk/portfolio:latest
                 docker run -d -p 8000:8000 pavelkostyuk/portfolio:latest
