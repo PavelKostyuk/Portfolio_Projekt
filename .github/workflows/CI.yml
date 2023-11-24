@@ -112,4 +112,7 @@ jobs:
     
               # Start pod
               kubectl run my-django-app --image=pavelkostyuk/portfolio:latest --port=8000
+
+              # Expose pod as a service
+              kubectl expose deployment my-django-app --type=NodePort --port=8000
             '
