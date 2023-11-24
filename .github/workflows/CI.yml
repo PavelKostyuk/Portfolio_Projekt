@@ -45,6 +45,7 @@ jobs:
 
     build:
         needs: run-test
+
         runs-on: ubuntu-latest
                  
         steps:
@@ -60,5 +61,23 @@ jobs:
               run: |
                     echo ${{ secrets.DOCKER_HUB_PAT }} | docker login -u pavelkostyuk --password-stdin
                     docker push pavelkostyuk/portfolio
-              
-                
+
+    deploy:
+        needs: build
+
+        runs-on: ubuntu-latest
+
+        steps:
+          - name: SSH into Droplet and manage Docker container
+            env:
+              SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+              DROPLET_IP_ADDRESS: ${{ secrets.DROPLET_IP_ADDRESS }}
+            run: |
+              ssh -o StrictHostKeyChecking=no -i <(echo "${SSH_PRIVATE_KEY}") serveradmin@${DROPLET_IP_ADDRESS} '
+
+                docker stop $(docker ps -q --filter "ancestor=pavelkostyuk/portfolio" --filter "publish=8000:8000")
+                docker rm $(docker ps -aq --filter "ancestor=pavelkostyuk/portfolio" --filter "publish=8000:8000")
+
+                docker pull pavelkostyuk/portfolio:latest
+                docker run -d -p 8000:8000 pavelkostyuk/portfolio:latest
+              '
