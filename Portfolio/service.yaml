@@ -7,6 +7,6 @@ spec:
     app: my-django-app  # Match labels used in your deployment
   ports:
     - protocol: TCP
-      port: 80  # Port you want to expose externally
-      targetPort: 8000  # Target port your app is listening on within the container
+      port: 8000  # Port you want to expose externally
+      targetPort: 80  # Target port your app is listening on within the container
   type: NodePort  # Expose the service externally using a port on the node
