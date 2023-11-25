@@ -115,8 +115,4 @@ jobs:
               # Apply the Service
               wget https://raw.githubusercontent.com/PavelKostyuk/Portfolio_Projekt/main/Portfolio/service.yaml -O service.yaml
               kubectl apply -f service.yaml
-
-              # Apply the Ingress
-              wget https://raw.githubusercontent.com/PavelKostyuk/Portfolio_Projekt/main/Portfolio/ingress.yaml -O ingress.yaml
-              kubectl apply -f ingress.yaml
             '
