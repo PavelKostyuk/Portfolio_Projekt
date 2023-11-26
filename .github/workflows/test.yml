@@ -1,0 +1,44 @@
+name: Test code
+
+on:
+    push: 
+    pull_request:
+        branches: [ main ]
+
+jobs:
+    run-test:
+        strategy:
+            fail-fast: false
+            matrix:
+               os: [ubuntu-latest]
+               python-version: 
+                - "3.10"
+                - "3.11"
+
+        name: test_code
+        runs-on: ${{ matrix.os}}
+        timeout-minutes: 5
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Cache dependencies for Ubuntu
+              uses: actions/cache@v3
+              with:
+                path: ~/.cache/pip  # Path to the dependency cache directory
+                key: ${{ matrix.os }}-pip-${{ hashFiles('Portfolio/requirements.txt') }}
+
+            - name: Set up Pyhton
+              uses: actions/setup-python@v4
+              with:
+                python-version: ${{ matrix.python-version }}
+
+            - name: Install dependencies
+              run: | 
+                  python -m pip install --upgrade pip
+                  python -m pip install -r Portfolio/requirements.txt
+
+            - name: Run tests
+              run: pytest Portfolio/Portfolio/tests/unit
+              continue-on-error: false  # This ensures the build fails if the tests fail

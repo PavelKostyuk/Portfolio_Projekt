@@ -1,0 +1,33 @@
+name: Build and Test Image (No Push)
+
+on:
+  push:
+    branches:
+      - developer
+
+jobs:
+  build_test_image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: |
+          docker build -t pavelkostyuk/portfolio Portfolio
+
+      - name: Start the application container
+        run: |
+          docker run -d -p 8000:8000 --name my-app pavelkostyuk/portfolio
+
+      - name: Wait for the app to start
+        run: sleep 15
+
+      - name: List running containers
+        run: docker ps -a
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          spec: cypress/e2e/spec.cy.js
+        continue-on-error: false
