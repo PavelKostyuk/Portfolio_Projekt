@@ -104,3 +104,4 @@ jobs:
                 fi
                   docker pull pavelkostyuk/portfolio:latest
                   docker run -d -p 8000:8000 pavelkostyuk/portfolio:latest
+                  ,
