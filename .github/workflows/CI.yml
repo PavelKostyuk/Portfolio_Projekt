@@ -72,7 +72,7 @@ jobs:
 
             - name: Push Docker image to Docker Hub
               run: |
-                  cat ${{ secrets.DOCKER_HUB_PAT }} | docker login -u pavelkostyuk --password-stdin
+                  echo ${{ secrets.DOCKER_HUB_PAT }} | docker login -u pavelkostyuk --password-stdin
                   docker push pavelkostyuk/portfolio
 
     deploy_to_Docker_on_VM:
@@ -84,7 +84,7 @@ jobs:
               SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
               DROPLET_IP_ADDRESS: ${{ secrets.DROPLET_IP_ADDRESS }}
             run: |
-              cat "${{ secrets.SSH_PRIVATE_KEY }}" > ssh_key.pem
+              echo "${{ secrets.SSH_PRIVATE_KEY }}" > ssh_key.pem
               chmod 600 ssh_key.pem
               ssh -o StrictHostKeyChecking=no -i ./ssh_key.pem serveradmin@${DROPLET_IP_ADDRESS} '
 
