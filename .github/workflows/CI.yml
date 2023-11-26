@@ -74,6 +74,7 @@ jobs:
       
             - name: Run Cypress tests
               run: |
+                  chmod +x node_modules/.bin/cypress
                   npx cypress run --headless --browser electron --spec "cypress/e2e/spec.cy.js"
 
             - name: Push Docker image to Docker Hub
