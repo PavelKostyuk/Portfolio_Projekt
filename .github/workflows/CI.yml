@@ -15,7 +15,7 @@ jobs:
                 - "3.10"
                 - "3.11"
 
-        name: Test
+        name: test_code
         runs-on: ${{ matrix.os}}
         timeout-minutes: 5
 
@@ -43,7 +43,7 @@ jobs:
               run: pytest Portfolio/Portfolio/tests/unit
               continue-on-error: false  # This ensures the build fails if the tests fail
 
-    build:
+    build_and_test_image:
         needs: run-test
 
         runs-on: ubuntu-latest
@@ -57,38 +57,57 @@ jobs:
               run: |
                   docker build -t pavelkostyuk/portfolio Portfolio
 
+            - name: Start the application container
+              run: |
+                  docker run -d -p 8000:8000 --name my-app pavelkostyuk/portfolio
+
+            - name: Wait for the app to start
+              run: sleep 30
+
+            - name: Install npm and Node.js
+              uses: actions/setup-node@v2
+              with:
+                node-version: '14' # or your preferred Node.js version
+      
+            - name: Install Cypress
+              run: npm install cypress
+      
+            - name: Run Cypress tests
+              run: |
+                  npx cypress run --headless --browser electron --spec "cypress/e2e/spec.cy.js"
+
             - name: Push Docker image to Docker Hub
               run: |
                   echo ${{ secrets.DOCKER_HUB_PAT }} | docker login -u pavelkostyuk --password-stdin
                   docker push pavelkostyuk/portfolio
 
     deploy:
-      needs: build
 
-      runs-on: ubuntu-latest
-      steps:
-        - name: SSH into Droplet and manage Docker container
-          env:
-            SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-            DROPLET_IP_ADDRESS: ${{ secrets.DROPLET_IP_ADDRESS }}
-          run: |
-            echo "${{ secrets.SSH_PRIVATE_KEY }}" > ssh_key.pem
-            chmod 600 ssh_key.pem
-            ssh -o StrictHostKeyChecking=no -i ./ssh_key.pem serveradmin@${DROPLET_IP_ADDRESS} '
+        needs: build_and_test_image
+        
+        runs-on: ubuntu-latest
+        steps:
+          - name: SSH into Droplet and manage Docker container
+            env:
+              SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+              DROPLET_IP_ADDRESS: ${{ secrets.DROPLET_IP_ADDRESS }}
+            run: |
+              echo "${{ secrets.SSH_PRIVATE_KEY }}" > ssh_key.pem
+              chmod 600 ssh_key.pem
+              ssh -o StrictHostKeyChecking=no -i ./ssh_key.pem serveradmin@${DROPLET_IP_ADDRESS} '
 
-              OLD_IMAGE_ID=$(docker images -q pavelkostyuk/portfolio:latest)
-              CONTAINER_ID=$(docker ps -aqf "ancestor=pavelkostyuk/portfolio")
-              if [ -n "$CONTAINER_ID" ]; then
-                docker stop $CONTAINER_ID
-                docker rm $CONTAINER_ID
-              else
-                echo "No container found matching the criteria."
-              fi
-              if [ -n "$OLD_IMAGE_ID" ]; then
-                docker rmi -f $OLD_IMAGE_ID
-              else
-                echo "No old image found matching the criteria."
-              fi
-                docker pull pavelkostyuk/portfolio:latest
-                docker run -d -p 8000:8000 pavelkostyuk/portfolio:latest
-              '
+                OLD_IMAGE_ID=$(docker images -q pavelkostyuk/portfolio:latest)
+                CONTAINER_ID=$(docker ps -aqf "ancestor=pavelkostyuk/portfolio")
+                if [ -n "$CONTAINER_ID" ]; then
+                  docker stop $CONTAINER_ID
+                  docker rm $CONTAINER_ID
+                else
+                  echo "No container found matching the criteria."
+                fi
+                if [ -n "$OLD_IMAGE_ID" ]; then
+                  docker rmi -f $OLD_IMAGE_ID
+                else
+                  echo "No old image found matching the criteria."
+                fi
+                  docker pull pavelkostyuk/portfolio:latest
+                  docker run -d -p 8000:8000 pavelkostyuk/portfolio:latest

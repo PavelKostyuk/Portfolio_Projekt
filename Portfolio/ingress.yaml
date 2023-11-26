@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: my-ingress
-  namespace: ingress-nginx # Ensure it's in the same namespace as the Ingress controller
+  namespace: ingress-nginx
 spec:
   rules:
     - host: gear5.online
