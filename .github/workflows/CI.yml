@@ -15,7 +15,7 @@ jobs:
                 - "3.10"
                 - "3.11"
 
-        name: Test
+        name: test_code
         runs-on: ${{ matrix.os}}
         timeout-minutes: 5
 
@@ -43,7 +43,7 @@ jobs:
               run: pytest Portfolio/Portfolio/tests/unit
               continue-on-error: false  # This ensures the build fails if the tests fail
 
-    build:
+    build_and_test_image:
         needs: run-test
 
         runs-on: ubuntu-latest
@@ -57,13 +57,25 @@ jobs:
               run: |
                   docker build -t pavelkostyuk/portfolio Portfolio
 
+            - name: Start the application container
+              run: |
+                  docker run -d -p 8000:8000 --name my-app pavelkostyuk/portfolio
+
+            - name: Wait for the app to start
+              run: sleep 30
+
+            - name: Run Cypress tests
+              run: |
+                  npm install
+                  npx cypress run --headless --browser electron --spec "cypress/e2e/spec.cy.js"
+
             - name: Push Docker image to Docker Hub
               run: |
                   echo ${{ secrets.DOCKER_HUB_PAT }} | docker login -u pavelkostyuk --password-stdin
                   docker push pavelkostyuk/portfolio
 
     deploy:
-      needs: build
+      needs: build_and_test_image
       runs-on: ubuntu-latest
           
       steps:
