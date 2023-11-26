@@ -11,11 +11,14 @@ jobs:
 
   build_test_push_image_developer:
     if: github.ref == 'refs/heads/developer'
+    needs: run-test
     uses: ./.github/workflows/build_and_test.yml
 
   build_test_push_image_main:
     if: github.ref == 'refs/heads/main'
+    needs: run-test
     uses: ./.github/workflows/build_test_push.yml
 
   deploy_to_Docker_on_VM:
+    needs: build_test_push_image_main
     uses: ./.github/workflows/deploy_to_Docker_on_VM.yml
