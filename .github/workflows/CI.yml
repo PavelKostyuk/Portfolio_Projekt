@@ -80,8 +80,8 @@ jobs:
         steps:
           - name: SSH into Droplet and manage Docker container
             env:
-            SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-            DROPLET_IP_ADDRESS: ${{ secrets.DROPLET_IP_ADDRESS }}
+              SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+              DROPLET_IP_ADDRESS: ${{ secrets.DROPLET_IP_ADDRESS }}
             run: |
               echo "${{ secrets.SSH_PRIVATE_KEY }}" > ssh_key.pem
               chmod 600 ssh_key.pem
