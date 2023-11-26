@@ -64,6 +64,9 @@ jobs:
             - name: Wait for the app to start
               run: sleep 15
 
+            - name: List running containers
+              run: docker ps -a
+
             - name: Cypress run
               uses: cypress-io/github-action@v6
               with:
