@@ -57,13 +57,6 @@ jobs:
               run: |
                   docker build -t pavelkostyuk/portfolio Portfolio
 
-            - name: Start the application container
-              run: |
-                  docker run -d -p 8000:8000 --name my-app pavelkostyuk/portfolio
-
-            - name: Wait for the app to start
-              run: sleep 20
-
             - name: Cypress run
               uses: cypress-io/github-action@v6
               with:
@@ -75,9 +68,7 @@ jobs:
                   docker push pavelkostyuk/portfolio
 
     deploy:
-
         needs: build_and_test_image
-
         runs-on: ubuntu-latest
         steps:
           - name: SSH into Droplet and manage Docker container
@@ -85,10 +76,9 @@ jobs:
               SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
               DROPLET_IP_ADDRESS: ${{ secrets.DROPLET_IP_ADDRESS }}
             run: |
-              echo "${{ secrets.SSH_PRIVATE_KEY }}" > ssh_key.pem
+              echo "${{ secrets.SSH_PRIVATE_KEY }}" | base64 --decode > ssh_key.pem
               chmod 600 ssh_key.pem
               ssh -o StrictHostKeyChecking=no -i ./ssh_key.pem serveradmin@${DROPLET_IP_ADDRESS} '
-
                 OLD_IMAGE_ID=$(docker images -q pavelkostyuk/portfolio:latest)
                 CONTAINER_ID=$(docker ps -aqf "ancestor=pavelkostyuk/portfolio")
                 if [ -n "$CONTAINER_ID" ]; then
@@ -102,6 +92,6 @@ jobs:
                 else
                   echo "No old image found matching the criteria."
                 fi
-                  docker pull pavelkostyuk/portfolio:latest
-                  docker run -d -p 8000:8000 pavelkostyuk/portfolio:latest
+                docker pull pavelkostyuk/portfolio:latest
+                docker run -d -p 8000:8000 pavelkostyuk/portfolio:latest'
                   ,
