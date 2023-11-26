@@ -82,6 +82,7 @@ jobs:
                   docker push pavelkostyuk/portfolio
 
     deploy:
+
         needs: build_and_test_image
         
         runs-on: ubuntu-latest
