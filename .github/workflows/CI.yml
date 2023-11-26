@@ -64,22 +64,10 @@ jobs:
             - name: Wait for the app to start
               run: sleep 20
 
-            - name: Install npm and Node.js
-              uses: actions/setup-node@v2
+            - name: Cypress run
+              uses: cypress-io/github-action@v6
               with:
-                node-version: '18' # or your preferred Node.js version
-      
-            - name: Install Cypress
-              run: |
-                  npm cache clean --force
-                  npm install cypress@13.6.0
-                  ls -l node_modules/cypress
-
-      
-            - name: Run Cypress tests
-              run: |
-                  chmod +x node_modules/.bin/cypress
-                  npx cypress run --headless --browser electron --spec "cypress/e2e/spec.cy.js"
+                spec: cypress/e2e/spec.cy.js
 
             - name: Push Docker image to Docker Hub
               run: |
