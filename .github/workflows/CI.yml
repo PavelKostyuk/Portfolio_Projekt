@@ -70,7 +70,11 @@ jobs:
                 node-version: '18' # or your preferred Node.js version
       
             - name: Install Cypress
-              run: npm install cypress@13.6.0
+              run: |
+                  npm cache clean --force
+                  npm install cypress@13.6.0
+                  ls -l node_modules/cypress
+
       
             - name: Run Cypress tests
               run: |
