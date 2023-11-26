@@ -43,7 +43,7 @@ jobs:
               run: pytest Portfolio/Portfolio/tests/unit
               continue-on-error: false  # This ensures the build fails if the tests fail
 
-    build_and_test_image:
+    build_test_push_image:
         needs: run-test
 
         runs-on: ubuntu-latest
@@ -68,14 +68,15 @@ jobs:
               uses: cypress-io/github-action@v6
               with:
                 spec: cypress/e2e/spec.cy.js
+              continue-on-error: false
 
             - name: Push Docker image to Docker Hub
               run: |
                   echo ${{ secrets.DOCKER_HUB_PAT }} | docker login -u pavelkostyuk --password-stdin
                   docker push pavelkostyuk/portfolio
 
-    deploy:
-        needs: build_and_test_image
+    deploy_to_Docker_on_VM:
+        needs: build_test_push_image
         runs-on: ubuntu-latest
         steps:
           - name: SSH into Droplet and manage Docker container
