@@ -1,0 +1,33 @@
+name: CI/CD 
+
+on:
+  push:
+    branches: [main, developer]
+  pull_request:
+    branches: [main]
+    types: [opened, closed]
+
+jobs:
+
+  run-test-on-developer-push:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/developer'
+    steps:
+      - name: Run test on developer branch push
+        uses: ./.github/workflows/test.yml
+
+  run-test-on-PR:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' && github.event.action == 'opened' && github.ref == 'refs/heads/main'
+    steps:
+      - name: Run test on PR creation
+        uses: ./.github/workflows/test.yml
+
+  deploy-on-merge-to-main:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged && github.ref == 'refs/heads/main'
+    steps:
+      - name: Deploy on merge to main
+        uses: ./.github/workflows/deploy.yml
+
+
