@@ -49,4 +49,5 @@ def test_detail_view(client):
 #this test ensures that the detail view for a project functions correctly by checking various aspects 
 # of the HTTP response, including context variables and the rendered template. 
 
-
+def test_always_fails():
+    assert False, "This test intentionally fails!"
