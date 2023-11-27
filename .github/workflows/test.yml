@@ -45,7 +45,7 @@ jobs:
               run: pytest Portfolio/Portfolio/tests/unit
               continue-on-error: false  # This ensures the build fails if the tests fail
 
-    build_test_push_image:
+    build_test_image:
         needs: run-test
 
         runs-on: ubuntu-latest
