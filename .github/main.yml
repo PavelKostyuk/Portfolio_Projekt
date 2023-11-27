@@ -1,4 +1,4 @@
-name: CI/CD 
+name: CI/CD
 
 on:
   push:
@@ -8,7 +8,6 @@ on:
     types: [opened, closed]
 
 jobs:
-
   run-test-on-developer-push:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/developer'
@@ -24,11 +23,12 @@ jobs:
         uses: ./.github/workflows/test.yml
 
   deploy-on-merge-to-main:
-  runs-on: ubuntu-latest
-  if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged && github.ref == 'refs/heads/main'
-  steps:
-    - name: Deploy on merge to main
-      if: github.ref == 'refs/heads/main'
-      uses: ./.github/workflows/deploy.yml
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged && github.ref == 'refs/heads/main'
+    steps:
+      - name: Deploy on merge to main
+        if: github.ref == 'refs/heads/main'
+        uses: ./.github/workflows/deploy.yml
+
 
 
