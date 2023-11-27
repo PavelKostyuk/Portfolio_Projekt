@@ -5,7 +5,7 @@ on:
     branches: [main, developer]
   pull_request:
     branches: [main]
-    types: [opened, closed]
+    types: [opened]
 
 jobs:
   run-test-on-developer-push:
@@ -24,10 +24,9 @@ jobs:
 
   deploy-on-merge-to-main:
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged && github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
       - name: Deploy on merge to main
-        if: github.ref == 'refs/heads/main'
         uses: ./.github/workflows/deploy.yml
 
 
