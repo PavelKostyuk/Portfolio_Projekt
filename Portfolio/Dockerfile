@@ -17,10 +17,7 @@ RUN python manage.py makemigrations && \
 ENV DJANGO_SUPERUSER_USERNAME=${DJANGO_SUPERUSER_USERNAME}
 ENV DJANGO_SUPERUSER_PASSWORD=${DJANGO_SUPERUSER_PASSWORD}
 
-# Expose port 8000
 EXPOSE 8000
 
-# Create superuser during container start and run Gunicorn
-CMD ["bash", "-c", "python manage.py create_superuser --noinput && gunicorn --bind :8000 Portfolio.wsgi:application"]
-
+CMD ["gunicorn", "--bind", ":8000", "Portfolio.wsgi:application"]
 
