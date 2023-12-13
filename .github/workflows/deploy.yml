@@ -61,11 +61,7 @@ jobs:
         
             - name: Start the application container with superuser setup
               run: |
-                  docker run -d -p 8000:8000 \
-                  --name my-app \
-                  -e DJANGO_SUPERUSER_USERNAME=${{ secrets.DJANGO_SUPERUSER_USERNAME }} \
-                  -e DJANGO_SUPERUSER_PASSWORD=${{ secrets.DJANGO_SUPERUSER_PASSWORD }} \
-                  pavelkostyuk/portfolio
+                  docker run -d -p 8000:8000 --name my-app -e DJANGO_SUPERUSER_USERNAME=${{ secrets.DJANGO_SUPERUSER_USERNAME }} -e DJANGO_SUPERUSER_PASSWORD=${{ secrets.DJANGO_SUPERUSER_PASSWORD }} pavelkostyuk/portfolio
 
             - name: Wait for the app to start
               run: sleep 15
