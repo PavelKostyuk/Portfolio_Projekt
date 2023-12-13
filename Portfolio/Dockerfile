@@ -13,6 +13,10 @@ RUN python manage.py makemigrations && \
     python manage.py migrate && \
     python manage.py collectstatic --no-input
 
+# Set up environment variables
+ENV DJANGO_SUPERUSER_USERNAME=${DJANGO_SUPERUSER_USERNAME}
+ENV DJANGO_SUPERUSER_PASSWORD=${DJANGO_SUPERUSER_PASSWORD}
+
 EXPOSE 8000
 
 CMD ["gunicorn", "--bind", ":8000", "Portfolio.wsgi:application"]
