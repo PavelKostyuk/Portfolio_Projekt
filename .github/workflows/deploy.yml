@@ -57,7 +57,10 @@ jobs:
 
             - name: Build Docker image
               run: |
-                  docker build -t pavelkostyuk/portfolio Portfolio
+                  docker build \
+                  --build-arg DJANGO_SUPERUSER_USERNAME=${{ secrets.DJANGO_SUPERUSER_USERNAME }} \
+                  --build-arg DJANGO_SUPERUSER_PASSWORD=${{ secrets.DJANGO_SUPERUSER_PASSWORD }} \
+                  -t pavelkostyuk/portfolio Portfolio
 
             - name: Start the application container
               run: |
