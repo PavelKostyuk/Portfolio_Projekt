@@ -61,15 +61,19 @@ jobs:
                   --build-arg DJANGO_SUPERUSER_USERNAME=${{ secrets.DJANGO_SUPERUSER_USERNAME }} \
                   --build-arg DJANGO_SUPERUSER_PASSWORD=${{ secrets.DJANGO_SUPERUSER_PASSWORD }} \
                   -t pavelkostyuk/portfolio Portfolio
-
-            - name: Start the application container
+        
+            - name: Start the application container with superuser setup
               run: |
-                  docker run -d -p 8000:8000 --name my-app pavelkostyuk/portfolio
+                  docker run -d -p 8000:8000 \
+                  --name my-app \
+                  -e DJANGO_SUPERUSER_USERNAME=${{ secrets.DJANGO_SUPERUSER_USERNAME }} \
+                  -e DJANGO_SUPERUSER_PASSWORD=${{ secrets.DJANGO_SUPERUSER_PASSWORD }} \
+                  pavelkostyuk/portfolio
 
             - name: Wait for the app to start
               run: sleep 15
 
-            - name: List running containers
+            - name: List running container
               run: docker ps -a
 
             - name: Cypress run
