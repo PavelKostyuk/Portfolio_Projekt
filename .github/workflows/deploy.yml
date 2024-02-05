@@ -75,8 +75,11 @@ jobs:
                 spec: cypress/e2e/spec.cy.js
               continue-on-error: false
 
-            - name: Push Docker image to Docker Hub
+            - name: Push Docker image to Digital Ocean Container Registry
               run: |
-                  echo ${{ secrets.DIGITALOCEAN_API_TOKEN }} | docker login -u pavelkostyuk --password-stdin
-                  docker push pavelkostyuk/portfolio
+                echo ${{ secrets.DIGITALOCEAN_API_TOKEN }} | docker login registry.digitalocean.com -u PavelKostyuk --password-stdin
+                docker tag pavelkostyuk/portfolio registry.digitalocean.com/ks8/pavelkostyuk/portfolio
+                docker push registry.digitalocean.com/ks8/pavelkostyuk/portfolio
+            
+            
 
