@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: portfolio
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: portfolio
+  template:
+    metadata:
+      labels:
+        app: portfolio
+    spec:
+      containers:
+      - name: your-container-name
+        image: pavelkostyuk/portfolio:latest
+        ports:
+        - containerPort: 8000
+      imagePullSecrets:
+      - name: DOCKER_HUB_PAT 
