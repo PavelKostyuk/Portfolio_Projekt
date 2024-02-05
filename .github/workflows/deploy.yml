@@ -77,9 +77,9 @@ jobs:
 
             - name: Push Docker image to Digital Ocean Container Registry
               run: |
-                echo ${{ secrets.DIGITALOCEAN_API_TOKEN }} | docker login registry.digitalocean.com -u PavelKostyuk --password-stdin
+                echo ${{ secrets.DIGITALOCEAN_API_TOKEN }} | doctl registry login -u PavelKostyuk --password-stdin
                 docker tag pavelkostyuk/portfolio registry.digitalocean.com/ks8/pavelkostyuk/portfolio
                 docker push registry.digitalocean.com/ks8/pavelkostyuk/portfolio
             
-            
+
 
