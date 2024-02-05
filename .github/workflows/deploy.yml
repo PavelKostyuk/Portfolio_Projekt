@@ -82,7 +82,7 @@ jobs:
                 token: ${{ secrets.DIGITALOCEAN_API_TOKEN }}
            
             - name: Log in to DigitalOcean Container Registry with short-lived credentials
-              run: doctl registry login --expiry-seconds 1200 --registry registry.digitalocean.com/ks8
+              run: doctl registry login 
 
            
             - name: Push Docker image to Digital Ocean Container Registry
