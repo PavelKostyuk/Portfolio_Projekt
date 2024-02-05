@@ -75,11 +75,20 @@ jobs:
                 spec: cypress/e2e/spec.cy.js
               continue-on-error: false
 
+             # Install doctl.
+            - name: Install doctl
+              uses: digitalocean/action-doctl@v2
+              with:
+                token: ${{ secrets.DIGITALOCEAN_API_TOKEN }}
+           
+            - name: Log in to DigitalOcean Container Registry with short-lived credentials
+              run: doctl registry login --expiry-seconds 1200
+           
             - name: Push Docker image to Digital Ocean Container Registry
               run: |
-                echo ${{ secrets.DIGITALOCEAN_API_TOKEN }} | doctl registry login -u PavelKostyuk --password-stdin
-                docker tag pavelkostyuk/portfolio registry.digitalocean.com/ks8/pavelkostyuk/portfolio
-                docker push registry.digitalocean.com/ks8/pavelkostyuk/portfolio
+               docker tag pavelkostyuk/portfolio registry.digitalocean.com/ks8/pavelkostyuk/portfolio
+               docker push registry.digitalocean.com/ks8/pavelkostyuk/portfolio
+           
             
 
 
