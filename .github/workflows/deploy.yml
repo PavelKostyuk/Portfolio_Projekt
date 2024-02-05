@@ -84,8 +84,10 @@ jobs:
             - name: Log in to DigitalOcean Container Registry with short-lived credentials
               run: doctl registry login 
 
-           
-            - name: Push Docker image to Digital Ocean Container Registry
+            - name: Delete previous image from Digital Ocean Container Registry
+              run: doctl registry repository delete-tag pavelkostyuk/portfolio latest -f
+
+            - name: Push Docker image to DigitalOcean Container Registry
               run: |
                docker tag pavelkostyuk/portfolio registry.digitalocean.com/ks8/pavelkostyuk/portfolio
                docker push registry.digitalocean.com/ks8/pavelkostyuk/portfolio
