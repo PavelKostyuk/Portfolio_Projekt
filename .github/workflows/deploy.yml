@@ -90,7 +90,18 @@ jobs:
                docker tag pavelkostyuk/portfolio registry.digitalocean.com/ks8/pavelkostyuk/portfolio
                docker push registry.digitalocean.com/ks8/pavelkostyuk/portfolio
 
-           
+            - name: Upload credentials of your registry to your DigitalOcean Kubernetes cluster
+              run: doctl registry kubernetes-manifest | kubectl apply -f -
+
+            - name: Reference the secret as an imagePullSecrets in Kubernetes
+              run: "kubectl patch serviceaccount default -p '{\"imagePullSecrets\": [{\"name\": \"registry.digitalocean.com/ks8\"}]}'"
+          
+            - name: Create Kubernetes Deployment
+              run: kubectl create deployment portfolio --image=registry.digitalocean.com/ks8/pavelkostyuk/portfolio
+            
+            - name: Verify deployment
+              run: kubectl rollout status deployment/portfolio
+
             
 
 
