@@ -32,7 +32,7 @@ jobs:
                 key: ${{ matrix.os }}-pip-${{ hashFiles('Portfolio/requirements.txt') }}
 
             - name: Set up Pyhton
-              uses: actions/setup-python@v4
+              uses: actions/setup-python@v6
               with:
                 python-version: ${{ matrix.python-version }}
 
