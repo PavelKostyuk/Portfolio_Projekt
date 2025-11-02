@@ -26,7 +26,7 @@ jobs:
               uses: actions/checkout@v4
 
             - name: Cache dependencies for Ubuntu
-              uses: actions/cache@v3
+              uses: actions/cache@v4
               with:
                 path: ~/.cache/pip  # Path to the dependency cache directory
                 key: ${{ matrix.os }}-pip-${{ hashFiles('Portfolio/requirements.txt') }}
