@@ -51,7 +51,7 @@ reverse==0.1.0
 sniffio==1.3.0
 snowballstemmer==2.2.0
 sortedcontainers==2.4.0
-sqlparse==0.4.4
+sqlparse==0.5.3
 tomlkit==0.11.8
 trio==0.22.0
 trio-websocket==0.12.2
