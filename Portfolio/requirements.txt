@@ -19,7 +19,7 @@ exceptiongroup==1.1.1
 filelock==3.12.1
 gunicorn==19.9.0
 h11==0.14.0
-idna==3.4
+idna==3.11
 imagesize==1.4.1
 iniconfig==2.0.0
 isort==5.12.0
